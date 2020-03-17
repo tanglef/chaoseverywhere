@@ -9,6 +9,6 @@ setup(
   author='Ophelie Coiffier ; Tanguy Lefort ; Ibrahim Gaizi',
   author_email='tanguy.lefort@etu.umontpellier.fr',
   license='MIT',
-  packages=['chaoseverywhere'],
+  packages=['chaoseverywhere', 'chaoseverywhere.mandel'],
   zip_safe=False
 )
