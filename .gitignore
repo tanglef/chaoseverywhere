@@ -5,4 +5,7 @@ temp
 *.pyc
 Animations
 *.mp4
+.pytest_cache
 *.avi
+*.gif
+*.DS_Store
