@@ -6,3 +6,6 @@ temp
 Animations
 *.mp4
 *.avi
+*.pytest_cache
+chaoseverywhere.egg-info
+anim_tests
