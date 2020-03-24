@@ -24,4 +24,18 @@ def logistic_draw(x0, r, iteration, points):
                  color='grey', alpha=0.4)  # intersections
         x0 = f_x0
     plt.show()
+
+
+def bifurcation():
+    r = np.linspace(2.7, 4, 10000)
+    x = []
+    y = []
+    for i in r:
+        x.append(i)
+        x0 = np.random.random()
+        for _ in range(500):
+            x0 = logistic(i, x0)
+        y.append(x0)
+    plt.plot(x, y, ls='', marker=',', color='blue')
+    plt.show()
         
