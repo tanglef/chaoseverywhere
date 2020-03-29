@@ -4,6 +4,8 @@ import matplotlib.pyplot as plt
 from mayavi import mlab
 import matplotlib.animation as animation
 import os
+import warnings
+warnings.filterwarnings("ignore", category=RuntimeWarning)
 
 class Mandelbrot_disp:
 

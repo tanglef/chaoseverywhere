@@ -4,6 +4,8 @@ import matplotlib.animation as animation
 import os
 import matplotlib.gridspec as gridspec
 from matplotlib import colors as mcolors
+import warnings
+warnings.filterwarnings("ignore", category=RuntimeWarning)
 
 from ..mandel.create_mandel import Mandelbrot_disp, mandel_branch_points
 
