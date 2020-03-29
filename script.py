@@ -6,4 +6,5 @@ import chaoseverywhere as chaos
 
 #chaos.Mandelbrot_disp(-.5,0,1.5).anim_pics_mandel()
 #print(chaos.logistic_draw(.01,3,50,200))
-chaos.animate_logistic().save('test_anim.mp4')
+chaos.animate_logistic(save=True)
+#chaos.connections()

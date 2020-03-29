@@ -96,4 +96,13 @@ class Mandelbrot_disp:
             mlab.savefig(imgname)
         mlab.close()
         os.system("ffmpeg -r 20 -i " + os.path.join(results_dir, "rotation") +
-                    "%1d.png -vcodec mpeg4 -q:v 3 -ab 192k -y "+os.path.join(results_dir,"movie.avi"))     
+                    "%1d.png -vcodec mpeg4 -q:v 3 -ab 192k -y "+os.path.join(results_dir,"movie.avi"))
+
+def mandel_branch_points(x0, mu, nb_iter=20):
+    points = [(x0, 0)]
+    for _ in range(nb_iter):
+        f_x0 = x0**2+mu
+        points.append((x0, f_x0))
+        points.append((f_x0, f_x0))
+        x0 = f_x0
+    return points   
