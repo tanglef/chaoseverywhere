@@ -1,6 +1,6 @@
 # Benchmarking chaoseverywhere
 
-:warning: :information_source: To have a better visualization of the time managment, you can run the file `run_to_visualize.py` and wait a few seconds. We recommend setting the depth to `5` and the Cutoff to `1/100`. :warning: :information_source:
+:warning: :information_source: To have a better visualization of the time managment, you can run the file `run_to_visualize.py` and wait a few seconds. We recommend setting the depth to `5` and the Cutoff to `1/100`.  :information_source: :warning:
 
 **Chosen functions** : We chose to only run functions that are the root of this module. Indeed, in most of the animations, we create the background once and then only add points or move around the structure. So the main question is not *How long does it take to render the movie?* but rather *How long does it take to produce each part of the movie?*
 
