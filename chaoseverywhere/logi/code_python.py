@@ -32,7 +32,6 @@ def logistic_draw(x0, r, iteration, points):
         x0 = f_x0
     plt.show()
 
-
 def bifurcation(show=True):
     r = np.linspace(1, 4, 10000)
     x = []

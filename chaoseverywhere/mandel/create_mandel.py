@@ -17,7 +17,7 @@ class Mandelbrot_disp:
         self.precision = precision
 
     def mandelbrot(self):
-        x, y, facteur, maxiteration, precision = self.x, self.y, self.facteur,
+        x, y, facteur, maxiteration, precision = self.x, self.y, self.facteur, \
         self.t_max, self.precision
         # définit l'espace avec une matrice
         X, Y = np.meshgrid(np.linspace(x-facteur, x+facteur, precision),
@@ -80,7 +80,7 @@ class Mandelbrot_disp:
         c = x + 1j * y
         z = np.zeros(c.shape)
         mandel = np.zeros(c.shape)
-        for i in range(50):
+        for i in range(self.t_max):
             z = z ** puiss + c
             if go_up:
                 mandel += 1 / float(2 + i) * (z * np.conj(z) > 4)

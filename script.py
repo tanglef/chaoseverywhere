@@ -8,4 +8,4 @@ import chaoseverywhere as chaos
 #print(chaos.logistic_draw(.01,3,50,200))
 #chaos.animate_logistic(save=True)
 #chaos.connections()
-chaos.Mandelbrot_disp(0,0,2,t_max=150, precision=500).anim_puiss_mandel(remove=True)
+#chaos.Mandelbrot_disp(0,0,2,t_max=150, precision=500).anim_puiss_mandel(remove=True)
