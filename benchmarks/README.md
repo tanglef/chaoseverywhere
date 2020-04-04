@@ -1,5 +1,7 @@
 # Benchmarking chaoseverywhere
 
+:warning: :information_source: To have a better visualization of the time managment, you can run the file `run_to_visualize.py` and wait a few seconds. We recommend setting the depth to `5` and the Cutoff to `1/100`. :warning: :information_source:
+
 **Chosen functions** : We chose to only run functions that are the root of this module. Indeed, in most of the animations, we create the background once and then only add points or move around the structure. So the main question is not *How long does it take to render the movie?* but rather *How long does it take to produce each part of the movie?*
 
 ## Time elapsed
@@ -15,7 +17,7 @@ Let's consider the logistic submodule now.
 
 |      	| logi_branch_points(.1,.3,1000) 	| bifurcation 	| logistic_draw(.1,3.4,300,300) |
 |------	|-------------	|------------	|----------------------|
-| time 	| 0.016 s      	| 26.66 s     	|11.81 s    |
+| time 	| 0.016 s      	| 26.1 s     	|11.81 s    |
 
 Just like before, the main (and static) pieces of the animations take more time to be generated but the moving parts of the scenes aren't time consuming at all considering that we don't even need that much points).
 
