@@ -1,6 +1,9 @@
 # Benchmarking chaoseverywhere
 
-:warning: :information_source: To have a better visualization of the time managment, you can run the file `run_to_visualize.py` and wait a few seconds. We recommend setting the *depth* to `5` and the *Cutoff* to `1/100`.  :information_source: :warning:
+:warning: :information_source: To have a better visualization of the time managment, you can run the file `run_to_visualize.py` and wait a few seconds. We recommend setting the *depth* to `5` and the *Cutoff* to `1/100`.
+
+Before using the `memory_graph.py` file, one must replace at lines 19, 41, 58, 65, 86, 116 and 136 the `#` with a `@` so that the `memory_profiler` and github can both be used.
+:information_source: :warning:
 
 **Chosen functions** : We chose to only run functions that are the root of this module. Indeed, in most of the animations, we create the background once and then only add points or move around the structure. So the main question is not *How long does it take to render the movie?* but rather *How long does it take to produce each part of the movie?*
 
