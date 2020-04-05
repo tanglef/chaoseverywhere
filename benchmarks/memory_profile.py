@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 import time
 import numpy as np
 import shutil
+import matplotlib.animation as animation
 from mayavi import mlab
 
 class Mandelbrot_disp:
@@ -81,6 +82,36 @@ class Mandelbrot_disp:
             mlab.savefig(imgname)
         mlab.close()
         shutil.rmtree(results_dir)
+    
+    @profile
+    def animate_mandel_plt(self):
+        im_init = self.mandelbrot()
+
+        Writer = animation.writers['ffmpeg']
+        writer = Writer(fps=15, metadata=dict(artist='Me'))
+
+        fig = plt.figure()
+        im = plt.imshow(im_init, cmap='bone')
+        plt.axis('off')
+
+        script_dir = os.path.dirname(__file__)
+        results_dir = os.path.join(script_dir, 'Animations')
+        sample_file_name = "Mandel_zoom"
+        if not os.path.isdir(results_dir):
+            os.makedirs(results_dir)
+
+        def animate(i):
+            im.set_data(Mandelbrot_disp(-1, -.3, 0.4-i/300,
+                                        t_max=self.t_max,
+                                        precision=self.precision).mandelbrot())
+            return im,
+
+        anim = animation.FuncAnimation(fig, animate, frames=150, interval=2,
+                                       repeat=False, save_count=200)
+        anim.save(os.path.join(results_dir, sample_file_name + 'test.avi'),
+                  writer=writer)
+        plt.close()
+        shutil.rmtree(results_dir)
 
 @profile
 def logistic_draw(x0, r, iteration, points):
@@ -112,7 +143,9 @@ if __name__ == "__main__":
     Mandelbrot_disp(-.5,0,1,100,400).mandel_loop()
     time.sleep(1)
     Mandelbrot_disp(-.5,0,1,100,400).disp_mandel()
-    time.sleep(1)
+    time.sleep(10)
     Mandelbrot_disp(-.5,0,1,100,400).anim_pics_mandel()
-    time.sleep(1)    
+    time.sleep(10)    
     logistic_draw(.01,2.7,50,100)
+    time.sleep(10)
+    Mandelbrot_disp(-.5,0,1,100,400).animate_mandel_plt()
