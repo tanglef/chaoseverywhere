@@ -4,6 +4,8 @@ import matplotlib.animation as animation
 import os
 import matplotlib.gridspec as gridspec
 from matplotlib import colors as mcolors
+import warnings
+warnings.filterwarnings("ignore", category=RuntimeWarning)
 
 from ..mandel.create_mandel import Mandelbrot_disp, mandel_branch_points
 
@@ -29,7 +31,6 @@ def logistic_draw(x0, r, iteration, points):
                  color='grey', alpha=0.4)  # intersections
         x0 = f_x0
     plt.show()
-
 
 def bifurcation(show=True):
     r = np.linspace(1, 4, 10000)

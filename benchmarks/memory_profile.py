@@ -1,11 +1,11 @@
-import numpy as np
-import matplotlib.pyplot as plt
-from mayavi import mlab
-import matplotlib.animation as animation
+import memory_profiler
 import os
-import warnings
-warnings.filterwarnings("ignore", category=RuntimeWarning)
-
+import matplotlib.pyplot as plt
+import time
+import numpy as np
+import shutil
+import matplotlib.animation as animation
+from mayavi import mlab
 
 class Mandelbrot_disp:
 
@@ -16,6 +16,7 @@ class Mandelbrot_disp:
         self.t_max = t_max
         self.precision = precision
 
+    @profile
     def mandelbrot(self):
         x, y, facteur, maxiteration, precision = self.x, self.y, self.facteur, \
         self.t_max, self.precision
@@ -37,13 +38,52 @@ class Mandelbrot_disp:
             # prévient le problème des deux ci-dessous
         return pasbornee
 
+    @profile
+    def mandel_loop(self, go_up=True, puiss=2):
+        x, y = np.ogrid[self.x - self.facteur:self.x +
+                        self.facteur:(self.precision * 1j),
+                        self.y - self.facteur:self.y +
+                        self.facteur:(self.precision * 1j)]
+        c = x + 1j * y
+        z = np.zeros(c.shape)
+        mandel = np.zeros(c.shape)
+        for i in range(self.t_max):
+            z = z ** puiss + c
+            if go_up:
+                mandel += 1 / float(2 + i) * (z * np.conj(z) > 4)
+            else:
+                mandel[z*np.conj(z) > 4] = i
+        return(mandel)
+
+    @profile
     def disp_mandel(self):
         mandel = self.mandelbrot()
         plt.figure()
         plt.imshow(mandel, cmap='bone')  # interpolation induite
         plt.axis('off')
-        plt.show()
 
+    @profile
+    def anim_pics_mandel(self, go_up=True, puiss=2):
+        mlab.figure(size=(800, 800))
+        mandel = self.mandel_loop(go_up=go_up, puiss=puiss)
+        mlab.surf(mandel, colormap='hot', warp_scale='auto', vmax=1.5)
+        script_dir = os.path.dirname(__file__)
+        results_dir = os.path.join(script_dir, 'Animations')
+        if not os.path.isdir(results_dir):
+            os.makedirs(results_dir)
+        for t in range(0, 170, 1):
+            mlab.view(elevation=180-t)
+            imgname = os.path.join(results_dir, 'rotation' + str(t) + ".png")
+            mlab.savefig(imgname)
+        for t in range(0, 30, 1):
+            mlab.view(distance=1000-5*t, elevation=180)
+            imgname = os.path.join(results_dir,
+                                   'rotation' + str(170+t) + ".png")
+            mlab.savefig(imgname)
+        mlab.close()
+        shutil.rmtree(results_dir)
+    
+    @profile
     def animate_mandel_plt(self):
         im_init = self.mandelbrot()
 
@@ -71,75 +111,41 @@ class Mandelbrot_disp:
         anim.save(os.path.join(results_dir, sample_file_name + 'test.avi'),
                   writer=writer)
         plt.close()
+        shutil.rmtree(results_dir)
 
-    def mandel_loop(self, go_up=True, puiss=2):
-        x, y = np.ogrid[self.x - self.facteur:self.x +
-                        self.facteur:(self.precision * 1j),
-                        self.y - self.facteur:self.y +
-                        self.facteur:(self.precision * 1j)]
-        c = x + 1j * y
-        z = np.zeros(c.shape)
-        mandel = np.zeros(c.shape)
-        for i in range(self.t_max):
-            z = z ** puiss + c
-            if go_up:
-                mandel += 1 / float(2 + i) * (z * np.conj(z) > 4)
-            else:
-                mandel[z*np.conj(z) > 4] = i
-        return(mandel)
-
-    def anim_pics_mandel(self, go_up=True, puiss=2):
-        mlab.figure(size=(800, 800))
-        mandel = self.mandel_loop(go_up=go_up, puiss=puiss)
-        mlab.surf(mandel, colormap='hot', warp_scale='auto', vmax=1.5)
-        script_dir = os.path.dirname(__file__)
-        results_dir = os.path.join(script_dir, 'Animations')
-        if not os.path.isdir(results_dir):
-            os.makedirs(results_dir)
-        for t in range(0, 170, 1):
-            mlab.view(elevation=180-t)
-            imgname = os.path.join(results_dir, 'rotation' + str(t) + ".png")
-            mlab.savefig(imgname)
-        for t in range(0, 30, 1):
-            mlab.view(distance=1000-5*t, elevation=180)
-            imgname = os.path.join(results_dir,
-                                   'rotation' + str(170+t) + ".png")
-            mlab.savefig(imgname)
-        mlab.close()
-        os.system("ffmpeg -r 20 -i " + os.path.join(results_dir, "rotation") +
-                  "%1d.png -vcodec mpeg4 -q:v 3 -ab 192k -y " +
-                  os.path.join(results_dir, "movie.avi"))
-
-    def anim_puiss_mandel(self, remove=True):
-        mlab.figure(size=(800, 800))
-        mandel = self.mandel_loop(go_up=False)
-        s = mlab.surf(mandel, colormap='hot', warp_scale='auto', vmax=1.5)
-        script_dir = os.path.dirname(__file__)
-        results_dir = os.path.join(script_dir, 'Animations')
-        if not os.path.isdir(results_dir):
-            os.makedirs(results_dir)
-
-        for t in range(2, 100, 1):
-            s.mlab_source.scalars = self.mandel_loop(go_up=False, puiss=t)
-            imgname = os.path.join(results_dir, 'puiss' + str(t) + ".png")
-            mlab.view(elevation=180)
-            mlab.savefig(imgname)
-        mlab.close()
-        os.system("ffmpeg -r 5 -i " + os.path.join(results_dir, "puiss") +
-                  "%1d.png -vcodec mpeg4 -q:v 3 -ab 192k -y " +
-                  os.path.join(results_dir, "movie_puiss.avi"))
-        if remove:
-            folder = os.listdir(results_dir)
-            for item in folder:
-                if item.startswith("puiss"):
-                    os.remove(os.path.join(results_dir, item))
-
-
-def mandel_branch_points(x0, mu, nb_iter=20):
-    points = [(x0, 0)]
-    for _ in range(nb_iter):
-        f_x0 = x0**2+mu
-        points.append((x0, f_x0))
-        points.append((f_x0, f_x0))
+@profile
+def logistic_draw(x0, r, iteration, points):
+    """ This function is a first way to be able to draw the logistic function, the curve (y=x)
+    and the intersections beetwen these two curves recursively.
+    """
+    x = np.linspace(0, 1, points)
+    plt.figure()
+    plt.plot(x, logistic(r, x))
+    plt.plot(x, x)
+    for _ in range(iteration):
+        f_x0 = logistic(r, x0)
+        plt.plot([x0, x0], [x0, f_x0],
+                 color='red', alpha=0.3)  # vertical stairs
+        plt.plot([x0, f_x0], [f_x0, f_x0],
+                 color='red', alpha=0.3)  # horizontal stairs
+        plt.plot([x0, f_x0], [f_x0, f_x0], 'o',
+                 color='grey', alpha=0.4)  # intersections
         x0 = f_x0
-    return points
+    plt.close()
+
+@profile
+def logistic(r, x):
+    return(r*x*(1-x))
+
+if __name__ == "__main__":
+    Mandelbrot_disp(-.5,0,1,100,400).mandelbrot()
+    time.sleep(1)
+    Mandelbrot_disp(-.5,0,1,100,400).mandel_loop()
+    time.sleep(1)
+    Mandelbrot_disp(-.5,0,1,100,400).disp_mandel()
+    time.sleep(10)
+    Mandelbrot_disp(-.5,0,1,100,400).anim_pics_mandel()
+    time.sleep(10)    
+    logistic_draw(.01,2.7,50,100)
+    time.sleep(10)
+    Mandelbrot_disp(-.5,0,1,100,400).animate_mandel_plt()

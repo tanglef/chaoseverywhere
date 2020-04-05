@@ -11,3 +11,5 @@ Animations
 *.avi
 chaoseverywhere.egg-info
 anim_tests
+*.prof
+*.dat
