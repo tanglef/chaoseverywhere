@@ -12,3 +12,4 @@ Animations
 chaoseverywhere.egg-info
 anim_tests
 *.prof
+*.dat

@@ -7,3 +7,6 @@ find_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "snake_profi
 
 os.system("python -m cProfile -o " + result_dir + " " + find_dir)
 os.system('snakeviz ' + result_dir)
+
+os.system('mprof run memory_profile.py')
+os.system('mprof plot --flame')
