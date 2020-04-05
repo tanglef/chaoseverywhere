@@ -16,7 +16,7 @@ class Mandelbrot_disp:
         self.t_max = t_max
         self.precision = precision
 
-    @profile
+    #profile
     def mandelbrot(self):
         x, y, facteur, maxiteration, precision = self.x, self.y, self.facteur, \
         self.t_max, self.precision
@@ -38,7 +38,7 @@ class Mandelbrot_disp:
             # prévient le problème des deux ci-dessous
         return pasbornee
 
-    @profile
+    #profile
     def mandel_loop(self, go_up=True, puiss=2):
         x, y = np.ogrid[self.x - self.facteur:self.x +
                         self.facteur:(self.precision * 1j),
@@ -55,14 +55,14 @@ class Mandelbrot_disp:
                 mandel[z*np.conj(z) > 4] = i
         return(mandel)
 
-    @profile
+    #profile
     def disp_mandel(self):
         mandel = self.mandelbrot()
         plt.figure()
         plt.imshow(mandel, cmap='bone')  # interpolation induite
         plt.axis('off')
 
-    @profile
+    #profile
     def anim_pics_mandel(self, go_up=True, puiss=2):
         mlab.figure(size=(800, 800))
         mandel = self.mandel_loop(go_up=go_up, puiss=puiss)
@@ -83,7 +83,7 @@ class Mandelbrot_disp:
         mlab.close()
         shutil.rmtree(results_dir)
     
-    @profile
+    #profile
     def animate_mandel_plt(self):
         im_init = self.mandelbrot()
 
@@ -113,7 +113,7 @@ class Mandelbrot_disp:
         plt.close()
         shutil.rmtree(results_dir)
 
-@profile
+#profile
 def logistic_draw(x0, r, iteration, points):
     """ This function is a first way to be able to draw the logistic function, the curve (y=x)
     and the intersections beetwen these two curves recursively.
@@ -133,7 +133,7 @@ def logistic_draw(x0, r, iteration, points):
         x0 = f_x0
     plt.close()
 
-@profile
+#profile
 def logistic(r, x):
     return(r*x*(1-x))
 
