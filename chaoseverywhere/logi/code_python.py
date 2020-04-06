@@ -10,12 +10,32 @@ warnings.filterwarnings("ignore", category=RuntimeWarning)
 from ..mandel.create_mandel import Mandelbrot_disp, mandel_branch_points
 
 def logistic(r, x):
+    """ This function calculates values of the logisitc function.
+
+    : param r : the common ratio
+    : type r : float
+    : param x : the value of the research point
+    : type x : float
+    : return : the logistic value of x
+    : rtype : float
+    """
     return(r*x*(1-x))
 
 
 def logistic_draw(x0, r, iteration, points):
     """ This function is a first way to be able to draw the logistic function, the curve (y=x)
-    and the intersections beetwen these two curves recursively.
+    and the logistic sequence (the stairs using to find limite of the sequence).
+
+    : param x0 : the starting point included in [0,1] 
+    : type x0 : float
+    : param r : the common ratio
+    : type r : float
+    : param iteration : the number of iteration to draw these curves
+    : type iteration : integer
+    : param points : the scale of the x-axis
+    : type points : integer
+    : return : the curves (y=x) and logistic function with the creation of the logistic sequence
+    : rtype : image
     """
     x = np.linspace(0, 1, points)
     plt.figure()
@@ -33,6 +53,14 @@ def logistic_draw(x0, r, iteration, points):
     plt.show()
 
 def bifurcation(show=True):
+    """ This function draw bifurcations
+    The x-axis is equivalent to the common ratio, r, and the y-axis is equivalent to the x points of 
+    the logistic function. This graph summarizes the different possibilities of the logistic draw according to r.
+    The final graph represents bifurcations when r is superior to 3.5.
+
+    : return : the bifurcation graph
+    : rtype : image
+    """
     r = np.linspace(1, 4, 10000)
     x = []
     y = []
@@ -49,6 +77,19 @@ def bifurcation(show=True):
     else: return(x,y)
 
 def logi_branch_points(x0, mu, nb_iter=100):
+    """It's the creation of the logistic sequence points.
+    When r increases, the points of logistic sequence increase to. So, this function
+    represents all coordinates of the sequence and puts them in a list.
+
+    : param x0 : the starting point included in [0,1]
+    : type x0 : float
+    : param mu : the common ratio
+    : type mu : float
+    : nb_iter : the number of iterations of the sequence
+    : type nb_iter : integer
+    : return : list of sequence points
+    : rtype : list
+    """
     points = [(x0,0)]
     for _ in range(nb_iter):
         f_x0 = logistic(mu,x0)
@@ -58,7 +99,22 @@ def logi_branch_points(x0, mu, nb_iter=100):
     return points
 
 def plot_logi_interact(x0,mu,nb_iter=100,linsdim=100):
-    """ Another way to plot the logistic function which is faster so more pleasant to use with the interaction."""
+    """ Another way to plot the logistic function which is faster so more pleasant to use with the interaction.
+    This function creates the logistic sequence. That's mean we start with x0, then we know the second point
+    drawing the 'stair' with (y=x) and the logistic function. And we do it again, up to nb_iter. But here, we know
+    all points thanks to the previous function.
+
+    : param x0 : the starting point included in [0,1]
+    : type x0 : float
+    : param mu : the common ratio
+    : type mu : float
+    : nb_iter : the number of iterations of the sequence 
+    : type nb_iter : integer
+    : param linsdim : number of points to draw the sequence
+    : type linsdim : integer
+    : return : graph representing logistic sequence
+    : rtype : image
+    """
     x,y=zip(*logi_branch_points(x0, mu, nb_iter))
     vals = np.linspace(0,1,linsdim)
     plt.figure()
@@ -68,6 +124,13 @@ def plot_logi_interact(x0,mu,nb_iter=100,linsdim=100):
     plt.show()
 
 def animate_logistic(save=False):
+    """ This function represents the evolution of the logistic map.
+    We can see the creation of the sequence step by step. The graph of the function is animated that's why we able 
+    to see the formation of the sequence.
+
+    return : logistic map
+    rtype : animated image
+    """
     fig, ax = plt.subplots()  # initialise la figure
     line, = plt.plot([], [],color='red', alpha=.4)
     courbe, = plt.plot([], [], color='black')
@@ -98,6 +161,13 @@ def animate_logistic(save=False):
     else: return(ani)
 
 def connections():
+    """ What is the link between Mandlebrot, logistic map and bifurcation ?
+    This function shows the connections with these three themes. The moving red line shows the place that we are
+    on these three graphs, at the same time.
+
+    return : the three graphs represented the three themes of our project and their link
+    rtype : animated image
+    """
     fig=plt.figure()
     plt.style.use(['ggplot', 'dark_background'])
     gs = gridspec.GridSpec(2, 4)

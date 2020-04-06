@@ -8,6 +8,20 @@ warnings.filterwarnings("ignore", category=RuntimeWarning)
 
 
 class Mandelbrot_disp:
+    """This class creates the mandlebrot graph and zooms in on this graph.
+    Moreover, there are functions who post the Mandlebrot set in 2D and 3D with animated video.
+
+    : param x : coordinate of the x-axis
+    : type x : float
+    : param y : coordinate's y-axis
+    : type y : float
+    : param facteur : the zoom's steps
+    : type facteur : float
+    : param t_max : the maximal iteration of the zoom
+    : type t_max : integer
+    : param precision : the precision of the zoom
+    : type precision : integer
+    """
 
     def __init__(self, x, y, facteur, t_max=100, precision=400):
         self.x = x
@@ -17,6 +31,11 @@ class Mandelbrot_disp:
         self.precision = precision
 
     def mandelbrot(self):
+        """This function gives values checking the Mandlebrot equations.
+
+        : return : A matrix indicates if each value is marked out or not
+        : rtype : matrix
+        """
         x, y, facteur, maxiteration, precision = self.x, self.y, self.facteur, \
         self.t_max, self.precision
         # définit l'espace avec une matrice
@@ -38,6 +57,9 @@ class Mandelbrot_disp:
         return pasbornee
 
     def disp_mandel(self):
+        """We can see the mandelbrot graph with this function.
+        Using the previously matrix, this function draws the mandlebrot graph. 
+        """
         mandel = self.mandelbrot()
         plt.figure()
         plt.imshow(mandel, cmap='bone')  # interpolation induite
@@ -45,6 +67,11 @@ class Mandelbrot_disp:
         plt.show()
 
     def animate_mandel_plt(self):
+        """This animated function is able to zoom in on the Mandlebrot graph.
+
+        : return : the animation of the Mandlebrot's zoom
+        : rtype : video / Animations
+        """
         im_init = self.mandelbrot()
 
         Writer = animation.writers['ffmpeg']
@@ -73,6 +100,11 @@ class Mandelbrot_disp:
         plt.close()
 
     def mandel_loop(self, go_up=True, puiss=2):
+        """And this one, determines coordinates of the successions of zoom in on this graph.
+
+        : return : coordinates of the Mandlebrot points zoomed in on. 
+        : rtype : matrix
+        """
         x, y = np.ogrid[self.x - self.facteur:self.x +
                         self.facteur:(self.precision * 1j),
                         self.y - self.facteur:self.y +
@@ -89,6 +121,11 @@ class Mandelbrot_disp:
         return(mandel)
 
     def anim_pics_mandel(self, go_up=True, puiss=2):
+        """This function shows the Mandlebrot set in 3D.
+
+        : return : 3D Mandlebrot set 
+        : rtype : video / Animation
+        """
         mlab.figure(size=(800, 800))
         mandel = self.mandel_loop(go_up=go_up, puiss=puiss)
         mlab.surf(mandel, colormap='hot', warp_scale='auto', vmax=1.5)
@@ -111,6 +148,13 @@ class Mandelbrot_disp:
                   os.path.join(results_dir, "movie.avi"))
 
     def anim_puiss_mandel(self, remove=True):
+        """ This function animates the Mandlebrot zoom.
+        Actually, this function successively zooms in on the graph, on the bifurcations of the graph.
+        We see the infinite repetition of the fractals, representing Mandlebrot set.
+
+        : return : successive zoom of the Mandlebrot set
+        : rtype : Animation / video
+        """
         mlab.figure(size=(800, 800))
         mandel = self.mandel_loop(go_up=False)
         s = mlab.surf(mandel, colormap='hot', warp_scale='auto', vmax=1.5)
@@ -136,6 +180,13 @@ class Mandelbrot_disp:
 
 
 def mandel_branch_points(x0, mu, nb_iter=20):
+    """ This function gives coordinates of Mandlebrot points.
+    Starting xith the coordinate of x0, the function applies Mandlebrot equation. These equations represent a sequence
+    with mu as common ratio. THe function calculates coordinates of the sequence.
+
+    : return : list of Mandlebrot points coordinates
+    : rtype : list
+    """
     points = [(x0, 0)]
     for _ in range(nb_iter):
         f_x0 = x0**2+mu
