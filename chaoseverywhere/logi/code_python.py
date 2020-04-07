@@ -130,7 +130,7 @@ def animate_logistic(save=False):
 
     :param save: the ability to save the video in a file 
     :type save: boolean
-    :return: the matplotlib animation if save, else nothing otherwise but the video  is now in the 'temp' directory.
+    :return: the matplotlib animation if save, else nothing otherwise but the video is now in the 'temp' directory.
     :rtype: plot the animated graph
     """
     fig, ax = plt.subplots()  # initialise la figure
@@ -167,9 +167,7 @@ def connections():
     This function shows the connections with the two Mandlebrot objects of this package : 
     the Mandlebrot set and the logistic map. The moving red line shows the place that we are
     on these three graphs, at the same time.
-
-    :return: saves the video in .avi in the 'temp' directory
-    :rtype: animated graph
+    It saves the video in .avi in the 'temp' directory.
     """
     fig=plt.figure()
     plt.style.use(['ggplot', 'dark_background'])
