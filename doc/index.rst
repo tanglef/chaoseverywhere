@@ -6,6 +6,11 @@
 Welcome to chaoseverywhere's documentation!
 ===========================================
 
+.. code-block:: python
+   
+   print('hello-world')
+   > Hello world
+
 .. toctree::
    :maxdepth: 2
    :caption: Contents:

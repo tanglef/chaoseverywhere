@@ -14,8 +14,14 @@ import os
 import sys
 sys.path.insert(0, os.path.abspath('..'))
 
+import sphinx_rtd_theme
+
 master_doc = 'index'
 add_module_names = False
+
+def setup(app):
+    app.add_stylesheet(os.path.join("css","custom.css"))
+    
 # -- Project information -----------------------------------------------------
 
 project = 'chaoseverywhere'
@@ -58,3 +64,7 @@ html_static_path = ['_static']
 
 
 # -- Extension configuration -------------------------------------------------
+
+html_logo = '_static/logo1_f.svg'
+
+
