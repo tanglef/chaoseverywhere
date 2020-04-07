@@ -15,7 +15,7 @@ import sys
 sys.path.insert(0, os.path.abspath('..'))
 
 master_doc = 'index'
-
+add_module_names = False
 # -- Project information -----------------------------------------------------
 
 project = 'chaoseverywhere'
