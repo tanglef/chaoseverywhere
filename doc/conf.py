@@ -44,7 +44,7 @@ extensions = [
     # use napoleon if you want your doc in Numpy style ?
 ]
 
-autodoc_mock_imports = ['sip', 'PyQt5', 'PyQt5.QtGui', 'PyQt5.QtCore', 'PyQt5.QtWidgets']
+autodoc_mock_imports = ['sip', 'PyQt5'] #, 'PyQt5.QtGui', 'PyQt5.QtCore', 'PyQt5.QtWidgets']
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -100,7 +100,6 @@ sphinx_gallery_conf = {
     'line_numbers': True,
     'image_scrapers': image_scrapers,
     'show_memory': False,
-    'expected_failing_examples': ['../examples/plot_mayavi_transformation.py'],
 }
 
 warnings.filterwarnings("ignore", category=UserWarning,
