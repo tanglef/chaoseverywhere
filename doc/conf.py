@@ -39,6 +39,9 @@ release = '0.0.1'
 # ones.
 extensions = [
     'sphinx.ext.autodoc',
+    'sphinx_gallery.gen_gallery',
+    'sphinx.ext.mathjax'
+    # use napoleon if you want your doc in Numpy style ?
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -56,6 +59,7 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 # a list of builtin themes.
 #
 html_theme = 'sphinx_rtd_theme'
+pygments_style = 'monokai' 
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
@@ -67,4 +71,12 @@ html_static_path = ['_static']
 
 html_logo = '_static/logo1_f.svg'
 
-
+from sphinx_gallery.sorting import FileNameSortKey
+sphinx_gallery_conf = {
+     # path to your examples scripts
+    'examples_dirs': ['../script',],
+     # path where to save gallery generated examples
+    'gallery_dirs': ['_auto_scripts'],
+    # order of the Gallery
+    'within_subsection_order': FileNameSortKey,
+}
