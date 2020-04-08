@@ -189,6 +189,27 @@ class Mandelbrot_disp:
             for item in folder:
                 if item.startswith("puiss"):
                     os.remove(os.path.join(results_dir, item))
+        
+    def mandel_transform(self, FUN):
+        """This function determines coordinates of points in the transformation of the Mandelbrot set.
+
+        :param FUN: function that replaces the mandelbrot recursive equation
+        :type FUN: function
+        :return: the Mandlebrot set transformed 
+        :rtype: numpy array
+        """
+        x, y = np.ogrid[self.x - self.facteur:self.x +
+                        self.facteur:(self.precision * 1j),
+                        self.y - self.facteur:self.y +
+                        self.facteur:(self.precision * 1j)]
+        c = x + 1j * y
+        z = np.zeros(c.shape)
+        mandel = np.zeros(c.shape)
+        for i in range(self.t_max):
+            z = FUN(z,c)
+            mandel += 1 / float(2 + i) * (z * np.conj(z) > 4)
+        return(mandel)
+            
 
 
 def mandel_branch_points(x0, mu, nb_iter=20):

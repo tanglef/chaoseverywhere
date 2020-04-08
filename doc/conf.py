@@ -73,16 +73,32 @@ html_static_path = ['_static']
 
 html_logo = '_static/logo1_f.svg'
 
+examples_dirs = ['../examples',]
+gallery_dirs = ['_auto_scripts']
+
+image_scrapers = ('matplotlib',)
+try:
+    # Run the mayavi examples and find the mayavi figures if mayavi is
+    # installed
+    from mayavi import mlab
+except Exception:  # can raise all sorts of errors
+    image_scrapers = ('matplotlib',)
+else:
+    image_scrapers += ('mayavi',)
+    # Do not pop up any mayavi windows while running the
+    # examples. These are very annoying since they steal the focus.
+    mlab.options.offscreen = True
+
 from sphinx_gallery.sorting import FileNameSortKey
 sphinx_gallery_conf = {
      # path to your examples scripts
-    'examples_dirs': ['../examples',],
+    'examples_dirs': examples_dirs,
      # path where to save gallery generated examples
-    'gallery_dirs': ['_auto_scripts'],
+    'gallery_dirs': gallery_dirs,
     # order of the Gallery
     'within_subsection_order': FileNameSortKey,
     'line_numbers': True,
-    'image_scrapers': ('matplotlib'), #'mayavi'),
+    'image_scrapers': image_scrapers,
     'show_memory': False,
 }
 
