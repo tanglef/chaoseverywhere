@@ -56,7 +56,7 @@ def bifurcation(show=True):
     """ This function builds the bifurcation diagramm of the logistic map.
     The x-axis corresponds to the common ratio, r (in [0,4]), and the y-axis corresponds to the x points of 
     the logistic function. This graph summarizes the different possibilities of the logistic draw according to r.
-    The final graph represents bifurcations. When r is superior to 3.5, we see the first bifurcation.
+    The final graph represents bifurcations. When r is equal to 3, we see the first bifurcation.
 
     :param show: True. Otherwise, the couple of points coordinates. 
     :return: the bifurcation graph
@@ -125,12 +125,12 @@ def plot_logi_interact(x0,mu,nb_iter=100,linsdim=100):
 
 def animate_logistic(save=False):
     """ This function represents the evolution of the logistic map.
-    We can see the creation of the sequence step by step. The graph of the function is animated so we able 
-    to see the formation of the sequence.
+    We can see the creation of the sequence step by step. The graph of the function is animated.
+    It shows the convergence of the sequence when r is small enough, then, the chaotic representation.
 
     :param save: the ability to save the video in a file 
     :type save: boolean
-    :return: the matplotlib animation if save, else nothing otherwise but the video is now in the 'temp' directory.
+    :return: the matplotlib animation. If save==True, it saves the animation in 'temp' and in a .mp4 format
     :rtype: plot the animated graph
     """
     fig, ax = plt.subplots()  # initialise la figure
@@ -168,6 +168,8 @@ def connections():
     the Mandlebrot set and the logistic map. The moving red line shows the place that we are
     on these three graphs, at the same time.
     It saves the video in .avi in the 'temp' directory.
+
+    :rtype: .avi file
     """
     fig=plt.figure()
     plt.style.use(['ggplot', 'dark_background'])
