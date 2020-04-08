@@ -38,8 +38,15 @@ Guide
 
 .. toctree::
    :maxdepth: 2
+   :caption: Other requirements for the project
 
    chaos/else
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Gallery of examples
+
+   _auto_scripts/index
 
 Indices and tables
 ==================

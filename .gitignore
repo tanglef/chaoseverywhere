@@ -14,3 +14,4 @@ anim_tests
 *.prof
 *.dat
 _build
+*_auto_scripts*

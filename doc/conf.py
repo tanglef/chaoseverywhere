@@ -13,7 +13,7 @@
 import os
 import sys
 sys.path.insert(0, os.path.abspath('..'))
-
+import warnings
 import sphinx_rtd_theme
 
 master_doc = 'index'
@@ -74,9 +74,16 @@ html_logo = '_static/logo1_f.svg'
 from sphinx_gallery.sorting import FileNameSortKey
 sphinx_gallery_conf = {
      # path to your examples scripts
-    'examples_dirs': ['../script',],
+    'examples_dirs': ['../examples',],
      # path where to save gallery generated examples
     'gallery_dirs': ['_auto_scripts'],
     # order of the Gallery
     'within_subsection_order': FileNameSortKey,
+    'line_numbers': True,
+    'image_scrapers': ('matplotlib', 'mayavi'),
+    'show_memory': True,
 }
+
+warnings.filterwarnings("ignore", category=UserWarning,
+                        message='Matplotlib is currently using agg, which is a'
+                                ' non-GUI backend, so cannot show the figure.')
