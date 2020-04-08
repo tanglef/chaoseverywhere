@@ -81,7 +81,7 @@ sphinx_gallery_conf = {
     'within_subsection_order': FileNameSortKey,
     'line_numbers': True,
     'image_scrapers': ('matplotlib', 'mayavi'),
-    'show_memory': True,
+    'show_memory': False,
 }
 
 warnings.filterwarnings("ignore", category=UserWarning,
