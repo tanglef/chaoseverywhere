@@ -71,14 +71,13 @@ html_static_path = ['_static']
 
 html_logo = '_static/logo1_f.svg'
 
-from sphinx_gallery.sorting import FileNameSortKey
+# from sphinx_gallery.sorting import FileNameSortKey
 sphinx_gallery_conf = {
      # path to your examples scripts
     'examples_dirs': ['../examples',],
      # path where to save gallery generated examples
     'gallery_dirs': ['_auto_scripts'],
     # order of the Gallery
-    'within_subsection_order': FileNameSortKey,
     'line_numbers': True,
     'image_scrapers': ('matplotlib', 'mayavi'),
     'show_memory': True,
