@@ -13,9 +13,15 @@
 import os
 import sys
 sys.path.insert(0, os.path.abspath('..'))
+import warnings
+import sphinx_rtd_theme
 
 master_doc = 'index'
+add_module_names = False
 
+def setup(app):
+    app.add_stylesheet(os.path.join("css","custom.css"))
+    
 # -- Project information -----------------------------------------------------
 
 project = 'chaoseverywhere'
@@ -33,6 +39,9 @@ release = '0.0.1'
 # ones.
 extensions = [
     'sphinx.ext.autodoc',
+    'sphinx_gallery.gen_gallery',
+    'sphinx.ext.mathjax'
+    # use napoleon if you want your doc in Numpy style ?
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -50,6 +59,7 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 # a list of builtin themes.
 #
 html_theme = 'sphinx_rtd_theme'
+pygments_style = 'monokai' 
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
@@ -58,3 +68,22 @@ html_static_path = ['_static']
 
 
 # -- Extension configuration -------------------------------------------------
+
+html_logo = '_static/logo1_f.svg'
+
+from sphinx_gallery.sorting import FileNameSortKey
+sphinx_gallery_conf = {
+     # path to your examples scripts
+    'examples_dirs': ['../examples',],
+     # path where to save gallery generated examples
+    'gallery_dirs': ['_auto_scripts'],
+    # order of the Gallery
+    'within_subsection_order': FileNameSortKey,
+    'line_numbers': True,
+    'image_scrapers': ('matplotlib', 'mayavi'),
+    'show_memory': True,
+}
+
+warnings.filterwarnings("ignore", category=UserWarning,
+                        message='Matplotlib is currently using agg, which is a'
+                                ' non-GUI backend, so cannot show the figure.')
