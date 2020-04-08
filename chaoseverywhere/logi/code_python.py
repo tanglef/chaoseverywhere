@@ -130,7 +130,7 @@ def animate_logistic(save=False):
 
     :param save: the ability to save the video in a file 
     :type save: boolean
-    :return: the matplotlib animation. If save==True, it saves the animation in 'temp' and in a field .mp4
+    :return: the matplotlib animation. If save==True, it saves the animation in 'temp' and in a .mp4 format
     :rtype: plot the animated graph
     """
     fig, ax = plt.subplots()  # initialise la figure
