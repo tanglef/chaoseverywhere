@@ -82,7 +82,7 @@ sphinx_gallery_conf = {
     # order of the Gallery
     'within_subsection_order': FileNameSortKey,
     'line_numbers': True,
-    'image_scrapers': ('matplotlib', 'mayavi'),
+    'image_scrapers': ('matplotlib'), #'mayavi'),
     'show_memory': False,
 }
 
