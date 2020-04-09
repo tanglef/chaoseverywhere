@@ -47,6 +47,7 @@ Guide
    :caption: Gallery of examples
 
    _auto_scripts/index
+   chaos/gallery_mayavi/gallery_mayavi
 
 Indices and tables
 ==================
