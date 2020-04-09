@@ -40,7 +40,8 @@ release = '0.0.1'
 extensions = [
     'sphinx.ext.autodoc',
     'sphinx_gallery.gen_gallery',
-    'sphinx.ext.mathjax'
+    'sphinx.ext.mathjax',
+    'sphinxcontrib.video'
     # use napoleon if you want your doc in Numpy style ?
 ]
 
