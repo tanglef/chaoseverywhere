@@ -45,7 +45,7 @@ Then, we use the Mandelbrot_disp class in this package to create a basis for the
 
 .. raw:: html
 
-    <img class='sphx-glr-single-img' src='../../../../_images/3d_transform.svg'/>
+    <img class='sphx-glr-single-img' src='../../_images/3d_transform.svg'/>
 
 What are we looking at ?
 -------------------------------
