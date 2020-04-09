@@ -44,7 +44,7 @@ extensions = [
     # use napoleon if you want your doc in Numpy style ?
 ]
 
-autodoc_mock_imports = ['sip', 'PyQt5', 'PyQt5.QtGui', 'PyQt5.QtCore', 'PyQt5.QtWidgets']
+autodoc_mock_imports = ['sip', 'PyQt5'] #, 'PyQt5.QtGui', 'PyQt5.QtCore', 'PyQt5.QtWidgets']
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -73,15 +73,20 @@ html_static_path = ['_static']
 
 html_logo = '_static/logo1_f.svg'
 
-# from sphinx_gallery.sorting import FileNameSortKey
+examples_dirs = ['../examples',]
+gallery_dirs = ['_auto_scripts']
+
+image_scrapers = ('matplotlib',)
+
+from sphinx_gallery.sorting import FileNameSortKey
 sphinx_gallery_conf = {
      # path to your examples scripts
-    'examples_dirs': ['../examples',],
+    'examples_dirs': examples_dirs,
      # path where to save gallery generated examples
-    'gallery_dirs': ['_auto_scripts'],
+    'gallery_dirs': gallery_dirs,
     # order of the Gallery
     'line_numbers': True,
-    'image_scrapers': ('matplotlib'), #'mayavi'),
+    'image_scrapers': image_scrapers,
     'show_memory': False,
 }
 
