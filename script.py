@@ -33,9 +33,4 @@ def transform(z,c):
 # base pattern is the mandelbrot set
 # show the real part of the iterates on the vertical axis
 
-import matplotlib.pyplot as plt
-fig = plt.figure()
-mandel = chaos.Mandelbrot_disp(-.5,0,1.5).mandel_loop(go_up=True)
-plt.imshow(mandel, cmap='Spectral')
-chaos.sparse_matrix(400,400,.02)
-plt.show()
+print(chaos.logi_branch_points(0.01,2,10))

@@ -39,7 +39,7 @@ plt.show()
 
 
 ########################################
-# Not so good...
+# A little better...
 # -------------------------
 #
 # The issue here is that chosing the iteration number creates jumps that may be not the smoothest and because :math:`z_0=0` and some points take a lot of iterations to make the sequence diverge (the one near the boundary), the constrast is not really visible.

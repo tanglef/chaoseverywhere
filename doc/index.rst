@@ -6,10 +6,8 @@
 Welcome to chaoseverywhere's documentation!
 ===========================================
 
-.. code-block:: python
-   
-   print('hello-world')
-   > Hello world
+This package was made as a project in the software devlopment course.
+The main goal here is to observe the behaviour of both the Mandelbrot set and the logistic map.
 
 .. toctree::
    :maxdepth: 2

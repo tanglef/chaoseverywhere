@@ -1,5 +1,7 @@
 The logistic map
 ------------------
 
-.. automodule:: chaoseverywhere.logi.code_pyton
+
+
+.. automodule:: chaoseverywhere.logi.code_python
    :members:
