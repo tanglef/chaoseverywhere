@@ -23,16 +23,12 @@ def transform(z,c):
 #mlab.show()
 
 
-mandel = chaos.Mandelbrot_disp(-.5,0,1.5).tests()
+mandel = chaos.Mandelbrot_disp(1.5,0,2.5, precision=600).mandel_transform(FUN=transform)
 
-
-mandel[np.isinf(mandel)]= np.nan
 mlab.figure(size=(800, 800))
-mlab.surf(mandel.real, mandel.imag, colormap='hot', warp_scale='auto', vmax=1.5)
+mlab.surf(mandel, colormap='hot', warp_scale='auto', vmax=1.5)
 mlab.view(elevation=180)
-mlab.savefig('3d_transform.png')
 mlab.show()
-
 
 # base pattern is the mandelbrot set
 # show the real part of the iterates on the vertical axis

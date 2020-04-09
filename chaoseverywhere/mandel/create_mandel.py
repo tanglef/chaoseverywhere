@@ -164,8 +164,8 @@ class Mandelbrot_disp:
         Actually, this function successively zooms in on the graph, on the bifurcations of the graph.
         We see the infinite repetition of the fractals, representing Mandlebrot set.
 
-        : return : successive zoom of the Mandlebrot set
-        : rtype : Animation / video
+        :return: successive zoom of the Mandlebrot set
+        :rtype: Animation / video
         """
         mlab.figure(size=(800, 800))
         mandel = self.mandel_loop(go_up=False)
@@ -208,23 +208,7 @@ class Mandelbrot_disp:
         for i in range(self.t_max):
             z = FUN(z,c)
             mandel += 1 / float(2 + i) * (z * np.conj(z) > 4)
-        return(mandel)
-    
-    def tests(self):
-        x, y = np.ogrid[self.x - self.facteur:self.x +
-                        self.facteur:(self.precision * 1j),
-                        self.y - self.facteur:self.y +
-                        self.facteur:(self.precision * 1j)]
-        c = x + 1j * y
-        z = np.zeros(c.shape)
-        iterates = np.zeros((c.shape[0], c.shape[1],self.t_max))
-        for i in range(self.t_max):
-            z = z**2+c
-            z[np.isinf(z)] = np.nan
-            iterates[:,:,i] = z.real
-        return(iterates) 
-
-          
+        return(mandel)         
 
 
 def mandel_branch_points(x0, mu, nb_iter=20):
