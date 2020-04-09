@@ -37,10 +37,11 @@ def transform(z,c):
 # Then, we use the Mandelbrot_disp class in this package to create a basis for the set, and then we use mayavi to display our work.
 #
 
-
+mlab.options.offscreen = True
 mandel = chaos.Mandelbrot_disp(1.5,0,2.5, precision=600).mandel_transform(FUN=transform)
 
-mlab.figure(size=(800, 800))
+f=mlab.figure(size=(800, 800))
+f.scene.disable_render = True
 mlab.surf(mandel, colormap='hot', warp_scale='auto', vmax=1.5)
 mlab.view(elevation=180)
 
