@@ -47,13 +47,12 @@ mlab.view(elevation=180)
 save_folder = '../doc/_build/html/_images/'
 os.makedirs(save_folder, exist_ok=True)
 mlab.savefig(save_folder + '3d_transform.png')
-
-# Thanks to https://github.com/getkeops/keops/blob/v1.4/pykeops/tutorials/surface_registration/plot_LDDMM_Surface.py#L239
+mlab.close()
 
 #############################
 # .. raw:: html
 #
-#     <img class='sphx-glr-single-img' src='../../_images/3d_transform.png'/>
+#     <img class='sphx-glr-single-img' src='../../html/_images/3d_transform.png'/>
 #
 
 ##########################
