@@ -38,7 +38,7 @@ Guide
 
 .. toctree::
    :maxdepth: 2
-   :caption: Other requirements for the project
+   :caption: Project requirements
 
    chaos/else
 
