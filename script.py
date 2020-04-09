@@ -23,12 +23,19 @@ def transform(z,c):
 #mlab.show()
 
 
-mandel = chaos.Mandelbrot_disp(1.5,0,2.5, precision=600).mandel_transform(FUN=transform)
+#mandel = chaos.Mandelbrot_disp(1.5,0,2.5, precision=600).mandel_transform(FUN=transform)
 
-mlab.figure(size=(800, 800))
-mlab.surf(mandel, colormap='hot', warp_scale='auto', vmax=1.5)
-mlab.view(elevation=180)
-mlab.show()
+#mlab.figure(size=(800, 800))
+#mlab.surf(mandel, colormap='hot', warp_scale='auto', vmax=1.5)
+#mlab.view(elevation=180)
+#mlab.show()
 
 # base pattern is the mandelbrot set
 # show the real part of the iterates on the vertical axis
+
+import matplotlib.pyplot as plt
+fig = plt.figure()
+mandel = chaos.Mandelbrot_disp(-.5,0,1.5).mandel_loop(go_up=True)
+plt.imshow(mandel, cmap='Spectral')
+chaos.sparse_matrix(400,400,.02)
+plt.show()
