@@ -12,6 +12,7 @@ import chaoseverywhere as chaos
 import matplotlib.pyplot as plt
 import os
 import matplotlib.animation as animation
+# sphinx_gallery_thumbnail_path = '../doc/_build/html/_images/thumbnail.svg'
 
 im_init = chaos.Mandelbrot_disp(-.5,0,1.5)
 im_init = im_init.mandelbrot()
@@ -31,6 +32,8 @@ def animate(i):
     im.set_data(chaos.Mandelbrot_disp(-1, -.3, 0.4-i/300,
             t_max=100,
             precision=400).mandelbrot())
+    if(i==130):
+        plt.savefig(results_dir + 'thumbnail.svg')
     return im,
 
 
