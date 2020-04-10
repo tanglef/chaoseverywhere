@@ -41,7 +41,6 @@ extensions = [
     'sphinx.ext.autodoc',
     'sphinx_gallery.gen_gallery',
     'sphinx.ext.mathjax',
-    'sphinxcontrib.video'
     # use napoleon if you want your doc in Numpy style ?
 ]
 
