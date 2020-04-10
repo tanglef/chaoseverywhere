@@ -61,7 +61,5 @@ plt.axis('off')
 plt.imshow(chaos.Mandelbrot_disp(-1, -.3, 0.4-110/300,
             t_max=100,
             precision=400).mandelbrot(), cmap='bone')
-plt.view()
-
-
+plt.show()
 
