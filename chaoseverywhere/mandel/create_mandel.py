@@ -71,10 +71,14 @@ class Mandelbrot_disp:
         plt.axis('off')
         plt.show()
 
-    def animate_mandel_plt(self):
+    def animate_mandel_plt(self, x=-1, y=-.3):
         """This function is able to zoom in on the Mandlebrot graph.
-        This animation zooms in on the point (-1, -0.3) to see the fractals.
+        This animation zooms in on the point (x,y) to see the fractals.
 
+        :param x: coordinate on the real axis of the point to zoom in.
+        :type x: float
+        :param y: coordinate on the imaginary axis of the point to zoom in.
+        :type y; float
         :return: the animation of the Mandlebrot's zoom saved in .avi
         :rtype: matplotlib plot
         """
@@ -94,14 +98,14 @@ class Mandelbrot_disp:
             os.makedirs(results_dir)
 
         def animate(i):
-            im.set_data(Mandelbrot_disp(-1, -.3, 0.4-i/300,
+            im.set_data(Mandelbrot_disp(x, y, 0.4-i/300,
                                         t_max=self.t_max,
                                         precision=self.precision).mandelbrot())
             return im,
 
         anim = animation.FuncAnimation(fig, animate, frames=150, interval=2,
                                        repeat=False, save_count=200)
-        anim.save(os.path.join(results_dir, sample_file_name + 'test.avi'),
+        anim.save(os.path.join(results_dir, sample_file_name + '.avi'),
                   writer=writer)
         plt.close()
 

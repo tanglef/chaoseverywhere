@@ -1,5 +1,5 @@
-The 3D-transformation
-==========================
+The Magnet 1 transformation
+=============================
 
 Some setup
 --------------

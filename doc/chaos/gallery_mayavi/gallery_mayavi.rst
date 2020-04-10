@@ -1,5 +1,5 @@
-Examples using mayavi
--------------------------
+Let's play with the Mandelbrot equation
+------------------------------------------------
 
 +-----------------------+
 |                       |
