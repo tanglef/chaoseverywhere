@@ -32,19 +32,20 @@ for i in range(150):
 sample_file_name = "Mandel_zoom"
 os.makedirs(results_dir, exist_ok=True)
 
-ani = animation.ArtistAnimation(fig, ims, interval=50)
-ani.save(results_dir + sample_file_name + '.mp4')
-
 plt.close()
+
 
 
 ########################
 # The video
 # ----------------
+# Before closing, one must run ani = animation.ArtistAnimation(fig, ims, interval=50) to get the animation and save it with the writer of its choice.
+# This package uses FFMPEG as writer.
+#
 # .. raw:: html
 #
-#          <video controls src="../../../_build/html/_images/Mandel_zoom.mp4"></video>
-
+#     <iframe width="356" height="200" src="https://www.youtube.com/embed/1QskVC57vc8?rel=0" frameborder="0" allowfullscreen></iframe>
+#
 
 
 #################################
@@ -54,12 +55,13 @@ plt.close()
 
 
 
+
 plt.figure()
 plt.axis('off')
 plt.imshow(chaos.Mandelbrot_disp(-1, -.3, 0.4-110/300,
             t_max=100,
             precision=400).mandelbrot(), cmap='bone')
-plt.show()
+plt.view()
 
 
 
