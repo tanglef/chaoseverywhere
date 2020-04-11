@@ -47,7 +47,7 @@ def logistic_draw(x0, r, iteration, points):
                  color='red', alpha=0.3)  # vertical stairs
         plt.plot([x0, f_x0], [f_x0, f_x0],
                  color='red', alpha=0.3)  # horizontal stairs
-        plt.plot([x0, f_x0], [f_x0, f_x0], 'o',
+        plt.plot([x0, f_x0], [f_x0, f_x0],
                  color='grey', alpha=0.4)  # intersections
         x0 = f_x0
     plt.show()
