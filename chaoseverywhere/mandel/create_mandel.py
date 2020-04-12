@@ -78,7 +78,7 @@ class Mandelbrot_disp:
         :param x: coordinate on the real axis of the point to zoom in.
         :type x: float
         :param y: coordinate on the imaginary axis of the point to zoom in.
-        :type y; float
+        :type y: float
         :return: the animation of the Mandlebrot's zoom saved in .avi
         :rtype: matplotlib plot
         """

@@ -8,6 +8,7 @@ Welcome to chaoseverywhere's documentation!
 
 This package was made as a project in the software devlopment course.
 The main goal here is to observe the behaviour of both the Mandelbrot set and the logistic map.
+And because we mainly learn with examples, detailled explanations of the objects and their construction are presented in the gallery.
 
 .. toctree::
    :maxdepth: 2
@@ -43,6 +44,7 @@ Guide
 
 .. toctree::
    :maxdepth: 2
+   :Caption: Installation, contacts and sources
 
    install/installation
    install/contacts

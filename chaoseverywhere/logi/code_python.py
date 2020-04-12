@@ -200,7 +200,7 @@ def connections():
     x_vals, y_vals = bifurcation(show=False)
     ax3.plot(x_vals, y_vals, ls='', marker=',', color='white')
     xl3, = ax3.plot([],[],color='red')
-    #ax3.axis('off')
+    ax3.axis('off')
 
     fig.suptitle('Connection between the Mandelbrot set and \n the bifurcation diagram', size=10)
 
@@ -217,7 +217,9 @@ def connections():
         xl.set_data((.3-0.01*i)*200+300, [0,400])
         #xl3.set_dat(1.4+.015*i,[0,1])
         if(i <= 105):
-        else:  xl3.set_data(3+0.0075*i,[0,1])
+            xl3.set_data(51/52+i/52,[0,1])
+        else:
+            xl3.set_data(2.0655+0.0089*i,[0,1])
         return courbe, xl,
 
     script_dir = os.path.dirname(__file__)
