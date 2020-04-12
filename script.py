@@ -33,4 +33,5 @@ def transform(z,c):
 # base pattern is the mandelbrot set
 # show the real part of the iterates on the vertical axis
 
-print(chaos.logi_branch_points(0.01,2,10))
+#print(chaos.logi_branch_points(0.01,2,10))
+chaos.connections()

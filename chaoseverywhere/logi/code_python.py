@@ -186,21 +186,21 @@ def connections():
     for i, to_disp in enumerate(to_disp):
         x = x_coord[i]
         y = y_coord[i]
-        ax1.scatter(x, y, color='magenta', marker='o')
-        ax1.text(x+5, y+10, to_disp, fontsize=9, color='magenta')
+        ax1.scatter(x, y, color='deepskyblue', marker='o')
+        ax1.text(x+5, y+20, to_disp, fontsize=9, color='deepskyblue')
     ax1.axis('off')
 
     ax2 = plt.subplot(gs[0, 2:])
     line, = ax2.plot([], [], color='red', alpha=1, lw=4)
     courbe, = ax2.plot([], [], color='dodgerblue', alpha=1, lw=2)
     x = np.linspace(-2, 1, 400)
-    ax2.plot(x, x, color='green')
+    ax2.plot(x, x, color='orange')
 
     ax3 = plt.subplot(gs[1, 1:3])
     x_vals, y_vals = bifurcation(show=False)
     ax3.plot(x_vals, y_vals, ls='', marker=',', color='white')
     xl3, = ax3.plot([],[],color='red')
-    ax3.axis('off')
+    #ax3.axis('off')
 
     fig.suptitle('Connection between the Mandelbrot set and \n the bifurcation diagram', size=10)
 
@@ -215,7 +215,9 @@ def connections():
         line.set_data(zip(*mandel_branch_points(.01, 0.3-0.01*i)))
         courbe.set_data(x, x**2+(0.3-0.01*i))
         xl.set_data((.3-0.01*i)*200+300, [0,400])
-        xl3.set_data(1.3+.015*i,[0,1])
+        #xl3.set_dat(1.4+.015*i,[0,1])
+        if(i <= 105):
+        else:  xl3.set_data(3+0.0075*i,[0,1])
         return courbe, xl,
 
     script_dir = os.path.dirname(__file__)
