@@ -1,4 +1,4 @@
-Chaning the power in the equation
+Changing the power in the equation
 ========================================
 
 Some setup
