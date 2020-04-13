@@ -24,6 +24,7 @@ def logistic(r, x):
 
 def logistic_draw(x0, r, iteration, points):
     """ This function is a first way to be able to draw the logistic sequence.
+
     It draws the logistic function, the (y=x) line. With these lines, the logistic sequence can be drawn.
 
     :param x0: the starting point included in [0,1] 
@@ -54,6 +55,7 @@ def logistic_draw(x0, r, iteration, points):
 
 def bifurcation(show=True):
     """ This function builds the bifurcation diagramm of the logistic map.
+    
     The x-axis corresponds to the common ratio, r (in [0,4]), and the y-axis corresponds to the x points of 
     the logistic function. This graph summarizes the different possibilities of the logistic draw according to r.
     The final graph represents bifurcations. When r is equal to 3, we see the first bifurcation.
@@ -79,6 +81,7 @@ def bifurcation(show=True):
 
 def logi_branch_points(x0, mu, nb_iter=100):
     """It creates of the logistic sequence points.
+    
     This function makes all coordinates of the sequence's points and puts them in a list. It creates stairs too.
 
     :param x0: the starting point included in [0,1]
@@ -100,6 +103,7 @@ def logi_branch_points(x0, mu, nb_iter=100):
 
 def plot_logi_interact(x0,mu,nb_iter=100,linsdim=100):
     """ Another way to plot the logistic function which is faster so more pleasant to use with the interaction.
+    
     This function creates the logistic sequence. Meaning, we start with x0, then we know the second point
     drawing the 'stair' with (y=x) and the logistic function. And we do it again, up to nb_iter. But here, we know
     all points thanks to the logi_branch_points function.
@@ -125,6 +129,7 @@ def plot_logi_interact(x0,mu,nb_iter=100,linsdim=100):
 
 def animate_logistic(save=False):
     """ This function represents the evolution of the logistic map.
+    
     We can see the creation of the sequence step by step. The graph of the function is animated.
     It shows the convergence of the sequence when r is small enough, then, the chaotic representation.
 

@@ -22,3 +22,4 @@ They all deal with fractals and the math around them and one can learn a lot (ju
 .. _Fractals are typically not self-similar: https://www.youtube.com/watch?v=gB9n2gHsHN4&t=1018s
 .. _The dark side of the Mandelbrot set: https://www.youtube.com/watch?v=9gk_8mQuerg&t=784s
 .. _The Mandelbrot set - Numberphile: https://www.youtube.com/watch?v=NGMRB4O922I&list=PLt5AfwLFPxWJ8GCgpFo5_OSyfl7j0nOiu&index=2&t=0s
+.. _`La suite logistique et le chaos`: https://www.imo.universite-paris-saclay.fr/~perrin/Conferences/logistiqueDP2.pdf
