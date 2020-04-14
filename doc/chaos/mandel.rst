@@ -118,6 +118,9 @@ for the actual plot.
 
 .. autofunction:: chaoseverywhere.mandel.create_mandel.mandel_branch_points
 
+
+One can use this function to produce the same plot of the video using the code below.
+
 .. code-block:: python
 
    plt.style.use(['ggplot', 'dark_background'])
