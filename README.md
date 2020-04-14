@@ -1,5 +1,6 @@
 ![Python package](https://github.com/tanglef/chaoseverywhere/workflows/Python%20package/badge.svg?branch=master)
 [![Documentation Status](https://readthedocs.org/projects/chaoseverywhere/badge/?version=latest)](https://chaoseverywhere.readthedocs.io/en/latest/?badge=latest)
+
 ## Overview
 
 This module deals with the links between the Mandlebrot set and the logistic map. 
@@ -8,6 +9,7 @@ Several animations are implemented in order to fully get what are the objects ma
 ## Documentation
 
 The documentation of this package is available [here](https://chaoseverywhere.readthedocs.io/en/latest/)
+
 ## Structure
 
 In script.py, you can find a short demonstration.
@@ -26,7 +28,6 @@ Every bit of the main code is in the chaoseverywherefolder. Animations are in th
 which is created on the fly. It also stores saved images.
 
 Currently, we mainly work in the sketch folder that won't be present at the end of this project. 
-
 
 ## Install
 

@@ -26,7 +26,7 @@ import matplotlib.pyplot as plt
 # For that and because it can be time consuming to calculate the modulus of numbers in an array (mainly because of the square root), we use the formula :
 #
 # .. math::
-# 
+#
 #    \forall\ z \in\mathbb{C},\ |z|^2=z\bar{z}.
 #
 # And then, we don't compare it with 2, but :math:`2^2`.

@@ -3,7 +3,7 @@ import scipy.sparse as sparse
 
 def sparse_matrix(wi, leng, den):
     """This function creates a sparse matrix.
-    
+
     It uses random number to place the values (non-null values).
 
     :param wi: the width of the matrix

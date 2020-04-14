@@ -11,16 +11,16 @@ Before using the `memory_graph.py` file, one must replace at lines 19, 41, 58, 6
 
 We ran the creation of the Mandelbrot set with a number of iterations of 300 and a precision of 400. Note that in the animations, the parameters used are way lower and the difference between the two functions is almost non-existent. As for the `mandel_branch_points` functions, we used for parameters `(.01, -.5, 1000)` where `1000` is the number of horizontal lines (and also vertical lines) created in the plot. In reality, don't need more than `100` branches.
 
-|       | mandel_loop| mandelbrot | mandel_branch_points |
+|      | mandel_loop | mandelbrot | mandel_branch_points |
 |------|-------------|------------|----------------------|
-| time | 12.3 s       | 9.79 s     |0.002 s    |
+| time | 12.3 s      | 9.79 s     |0.002 s               |
 
 The most time consuming functions are the first two : the ones creating the actual Mandelbrot set.
 Let's consider the logistic submodule now.
 
 |      | logi_branch_points(.1,.3,1000) | bifurcation | logistic_draw(.1,3.4,300,300) |
-|------|-------------|------------|----------------------|
-| time | 0.016 s      | 26.1 s     |11.81 s    |
+|------|--------------------------------|-------------|-------------------------------|
+| time | 0.016 s                        | 26.1 s      |11.81 s                        |
 
 Just like before, the main (and static) pieces of the animations take more time to be generated but the moving parts of the scenes aren't time consuming at all considering that we don't even need that much points).
 

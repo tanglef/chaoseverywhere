@@ -4,7 +4,7 @@ An animation of the logistic function
 """
 
 ####################################
-# The logistic map and... rabbits? 
+# The logistic map and... rabbits?
 # ----------------------------------
 # A commun example to understand the logistic map is to think of a pattern to simulate a population of rabbits
 # with the most simple conditions in a multiplicativ model.
@@ -41,7 +41,7 @@ plt.show()
 # * For :math:`r\in [1,3]`, the population oscillates and then stabilizes to the value :math:`\frac{r-1}{r}`.
 # * For :math:`r\in [3,3.57]` the population oscillates between several values, there is no longer one attractor.
 # * For :math:`r\geq 3.57` there is almost surely a chaotic design.
-# 
+#
 #
 # .. raw:: html
 #

@@ -34,8 +34,8 @@ class Mandelbrot_disp:
         self.precision = precision
 
     def mandelbrot(self):
-        """This function gives a boolean matrix. 
-    
+        """This function gives a boolean matrix.
+
         We affect the value True if the point is in the Mandlebrot set, false otherwise.
 
         :return: a matrix indicating whether or not the point is in Mandlebrot set.
@@ -65,7 +65,7 @@ class Mandelbrot_disp:
         """Using the array of the mandlebrot function, this function shows the mandlebrot set.
 
         :return: plot the Mandlebrot set
-        :rtype: matplotlib plot 
+        :rtype: matplotlib plot
         """
         mandel = self.mandelbrot()
         plt.figure()
@@ -118,7 +118,7 @@ class Mandelbrot_disp:
         :param go_up: type of display, condition to give values in mandel's array
         :type: boolean
         :param puiss: the exponant in the Mandlebrot equation
-        :return: the Mandlebrot set in colors 
+        :return: the Mandlebrot set in colors
         :rtype: numpy array
         """
         x, y = np.ogrid[self.x - self.facteur:self.x +
@@ -202,7 +202,7 @@ class Mandelbrot_disp:
 
         :param FUN: function that replaces the mandelbrot recursive equation
         :type FUN: function
-        :return: the Mandlebrot set transformed 
+        :return: the Mandlebrot set transformed
         :rtype: numpy array
         """
         x, y = np.ogrid[self.x - self.facteur:self.x +
@@ -215,12 +215,12 @@ class Mandelbrot_disp:
         for i in range(self.t_max):
             z = FUN(z,c)
             mandel += 1 / float(2 + i) * (z * np.conj(z) > 4)
-        return(mandel)         
+        return(mandel)  
 
 
 def mandel_branch_points(x0, mu, nb_iter=20):
     """ This function gives the coordinates of Mandlebrot points.
-    
+
     Starting with the coordinate of (x0,0), the function applies the Mandlebrot sequence. Each coordinates
     is appended in a list, useful to draw stairs of the recursive sequence.
 

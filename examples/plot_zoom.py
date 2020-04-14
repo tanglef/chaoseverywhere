@@ -4,15 +4,14 @@ Animation of a zoom
 """
 
 ####################################
-# Some Setup 
+# Some Setup
 # ----------------------------------
 # There are multiple ways to animate a zoom with matplotlib. This package use one very close to the one below.
 #
- 
-  
+
+
 import chaoseverywhere as chaos
 import matplotlib.pyplot as plt
-import os
 import matplotlib.animation as animation
 
 
@@ -42,7 +41,7 @@ plt.show()
 #   im_init = im_init.mandelbrot()
 #   fig = plt.figure()
 #   im = plt.imshow(im_init, cmap='bone', animated=True)
-#   
+#
 #   ims = []
 #   for i in range(150):
 #       im = plt.imshow(chaos.Mandelbrot_disp(-1, -.3, 0.4-i/300,

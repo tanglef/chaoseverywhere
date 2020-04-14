@@ -3,7 +3,6 @@ import matplotlib.pyplot as plt
 import matplotlib.animation as animation
 import os
 import matplotlib.gridspec as gridspec
-from matplotlib import colors as mcolors
 import warnings
 warnings.filterwarnings("ignore", category=RuntimeWarning)
 
@@ -27,7 +26,7 @@ def logistic_draw(x0, r, iteration, points):
 
     It draws the logistic function, the (y=x) line. With these lines, the logistic sequence can be drawn.
 
-    :param x0: the starting point included in [0,1] 
+    :param x0: the starting point included in [0,1]
     :type x0: float
     :param r: the common ratio
     :type r: float
@@ -56,11 +55,11 @@ def logistic_draw(x0, r, iteration, points):
 def bifurcation(show=True):
     """ This function builds the bifurcation diagramm of the logistic map.
     
-    The x-axis corresponds to the common ratio, r (in [0,4]), and the y-axis corresponds to the x points of 
+    The x-axis corresponds to the common ratio, r (in [0,4]), and the y-axis corresponds to the x points of
     the logistic function. This graph summarizes the different possibilities of the logistic draw according to r.
     The final graph represents bifurcations. When r is equal to 3, we see the first bifurcation.
 
-    :param show: True. Otherwise, the couple of points coordinates. 
+    :param show: True. Otherwise, the couple of points coordinates.
     :return: the bifurcation graph
     :rtype: plot the graph
     """
@@ -112,7 +111,7 @@ def plot_logi_interact(x0,mu,nb_iter=100,linsdim=100):
     :type x0: float
     :param mu: the common ratio
     :type mu: float
-    :param nb_iter: the number of iterations of the sequence 
+    :param nb_iter: the number of iterations of the sequence
     :type nb_iter: integer
     :param linsdim: number of points between 0 and 1 on the x-axis
     :type linsdim: integer
@@ -133,7 +132,7 @@ def animate_logistic(save=False):
     We can see the creation of the sequence step by step. The graph of the function is animated.
     It shows the convergence of the sequence when r is small enough, then, the chaotic representation.
 
-    :param save: the ability to save the video in a file 
+    :param save: the ability to save the video in a file
     :type save: boolean
     :return: the matplotlib animation. If save==True, it saves the animation in 'temp' and in a .mp4 format
     :rtype: plot the animated graph
@@ -154,11 +153,11 @@ def animate_logistic(save=False):
         line.set_data(zip(*logi_branch_points(.01, 1.015+i*0.015)))
         courbe.set_data(x, logistic(1.015+i*.015,x))
         ax.set_title(u"mu = {0:.3f}".format(1.015+i*0.015))
-        return line, courbe, 
+        return line, courbe,
 
     ani = animation.FuncAnimation(
         fig, animate, init_func=init, frames=200, blit=True, interval=20, repeat=False)
-    
+
     if save:
         script_dir = os.path.dirname(__file__)
         results_dir = os.path.join(script_dir, 'temp')
@@ -168,8 +167,8 @@ def animate_logistic(save=False):
     else: return(ani)
 
 def connections():
-    """ It shows the link between Mandlebrot, logistic map and bifurcation 
-    This function shows the connections with the two Mandlebrot objects of this package : 
+    """ It shows the link between Mandlebrot, logistic map and bifurcation
+    This function shows the connections with the two Mandlebrot objects of this package:
     the Mandlebrot set and the logistic map. The moving red line shows the place that we are
     on these three graphs, at the same time.
     It saves the video in .avi in the 'temp' directory.
@@ -233,6 +232,6 @@ def connections():
         os.makedirs(results_dir)
 
     ani_three = animation.FuncAnimation(
-        fig, animate, init_func=init, frames=180, interval=20, repeat=False) 
-    FFwriter = animation.FFMpegWriter(fps=10)     
+        fig, animate, init_func=init, frames=180, interval=20, repeat=False)
+    FFwriter = animation.FFMpegWriter(fps=10)
     ani_three.save(os.path.join(results_dir, 'les_3.avi'), writer = FFwriter, dpi=300)
