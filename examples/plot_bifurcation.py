@@ -26,9 +26,8 @@ chaos.bifurcation(show=True)
 # 
 # .. raw:: html
 #
-#     <iframe width="356" height="200" src="https://www.youtube.com/embed/watch?v=xYQbqML1eE4?rel=0&autoplay=1&loop=1&playlist=YiqpSf13kzI" frameborder="0" allowfullscreen></iframe>
+#     <iframe width="560" height="315" src="https://www.youtube.com/embed/xYQbqML1eE4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 #
 #
-#
-# Another way to look at it is, if we plot the real part of the iterates of the points
+# Another way to look at it is: if we plot the real part of the iterates of the points
 # in the Mandelbrot set, then we get the bifurcation diagram.
