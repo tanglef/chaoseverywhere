@@ -3,14 +3,13 @@ import matplotlib.pyplot as plt
 import matplotlib.animation as animation
 import os
 import matplotlib.gridspec as gridspec
-from matplotlib import colors as mcolors
 import warnings
 warnings.filterwarnings("ignore", category=RuntimeWarning)
 
 from ..mandel.create_mandel import Mandelbrot_disp, mandel_branch_points
 
 def logistic(r, x):
-    """ This function calculates values of the logisitc function.
+    """ Calculates values of the logisitc function.
 
     :param r: the common ratio
     :type r: float
@@ -23,10 +22,11 @@ def logistic(r, x):
 
 
 def logistic_draw(x0, r, iteration, points):
-    """ This function is a first way to be able to draw the logistic sequence.
+    """First way to be able to draw the logistic sequence.
+
     It draws the logistic function, the (y=x) line. With these lines, the logistic sequence can be drawn.
 
-    :param x0: the starting point included in [0,1] 
+    :param x0: the starting point included in [0,1]
     :type x0: float
     :param r: the common ratio
     :type r: float
@@ -47,20 +47,21 @@ def logistic_draw(x0, r, iteration, points):
                  color='red', alpha=0.3)  # vertical stairs
         plt.plot([x0, f_x0], [f_x0, f_x0],
                  color='red', alpha=0.3)  # horizontal stairs
-        plt.plot([x0, f_x0], [f_x0, f_x0], 'o',
+        plt.plot([x0, f_x0], [f_x0, f_x0],
                  color='grey', alpha=0.4)  # intersections
         x0 = f_x0
     plt.show()
 
 def bifurcation(show=True):
-    """ This function builds the bifurcation diagramm of the logistic map.
-    The x-axis corresponds to the common ratio, r (in [0,4]), and the y-axis corresponds to the x points of 
+    """ Builds the bifurcation diagramm of the logistic map.
+    
+    The x-axis corresponds to the common ratio, r (in [0,4]), and the y-axis corresponds to the x points of
     the logistic function. This graph summarizes the different possibilities of the logistic draw according to r.
     The final graph represents bifurcations. When r is equal to 3, we see the first bifurcation.
 
-    :param show: True. Otherwise, the couple of points coordinates. 
-    :return: the bifurcation graph
-    :rtype: plot the graph
+    :param show: True. Otherwise, the tuples of points coordinates.
+    :return: the bifurcation graph or the coordinates
+    :rtype: matplotlib graph or list of float tuples
     """
     r = np.linspace(1, 4, 10000)
     x = []
@@ -79,6 +80,7 @@ def bifurcation(show=True):
 
 def logi_branch_points(x0, mu, nb_iter=100):
     """It creates of the logistic sequence points.
+
     This function makes all coordinates of the sequence's points and puts them in a list. It creates stairs too.
 
     :param x0: the starting point included in [0,1]
@@ -100,6 +102,7 @@ def logi_branch_points(x0, mu, nb_iter=100):
 
 def plot_logi_interact(x0,mu,nb_iter=100,linsdim=100):
     """ Another way to plot the logistic function which is faster so more pleasant to use with the interaction.
+
     This function creates the logistic sequence. Meaning, we start with x0, then we know the second point
     drawing the 'stair' with (y=x) and the logistic function. And we do it again, up to nb_iter. But here, we know
     all points thanks to the logi_branch_points function.
@@ -108,7 +111,7 @@ def plot_logi_interact(x0,mu,nb_iter=100,linsdim=100):
     :type x0: float
     :param mu: the common ratio
     :type mu: float
-    :param nb_iter: the number of iterations of the sequence 
+    :param nb_iter: the number of iterations of the sequence
     :type nb_iter: integer
     :param linsdim: number of points between 0 and 1 on the x-axis
     :type linsdim: integer
@@ -124,11 +127,12 @@ def plot_logi_interact(x0,mu,nb_iter=100,linsdim=100):
     plt.show()
 
 def animate_logistic(save=False):
-    """ This function represents the evolution of the logistic map.
+    """ Represents the evolution of the logistic map.
+
     We can see the creation of the sequence step by step. The graph of the function is animated.
     It shows the convergence of the sequence when r is small enough, then, the chaotic representation.
 
-    :param save: the ability to save the video in a file 
+    :param save: the ability to save the video in a file
     :type save: boolean
     :return: the matplotlib animation. If save==True, it saves the animation in 'temp' and in a .mp4 format
     :rtype: plot the animated graph
@@ -149,11 +153,11 @@ def animate_logistic(save=False):
         line.set_data(zip(*logi_branch_points(.01, 1.015+i*0.015)))
         courbe.set_data(x, logistic(1.015+i*.015,x))
         ax.set_title(u"mu = {0:.3f}".format(1.015+i*0.015))
-        return line, courbe, 
+        return line, courbe,
 
     ani = animation.FuncAnimation(
         fig, animate, init_func=init, frames=200, blit=True, interval=20, repeat=False)
-    
+
     if save:
         script_dir = os.path.dirname(__file__)
         results_dir = os.path.join(script_dir, 'temp')
@@ -163,8 +167,9 @@ def animate_logistic(save=False):
     else: return(ani)
 
 def connections():
-    """ It shows the link between Mandlebrot, logistic map and bifurcation 
-    This function shows the connections with the two Mandlebrot objects of this package : 
+    """ Shows the link between Mandlebrot, logistic map and bifurcation.
+
+    This function shows the connections with the two Mandlebrot objects of this package:
     the Mandlebrot set and the logistic map. The moving red line shows the place that we are
     on these three graphs, at the same time.
     It saves the video in .avi in the 'temp' directory.
@@ -186,15 +191,15 @@ def connections():
     for i, to_disp in enumerate(to_disp):
         x = x_coord[i]
         y = y_coord[i]
-        ax1.scatter(x, y, color='magenta', marker='o')
-        ax1.text(x+5, y+10, to_disp, fontsize=9, color='magenta')
+        ax1.scatter(x, y, color='deepskyblue', marker='o')
+        ax1.text(x+5, y+20, to_disp, fontsize=9, color='deepskyblue')
     ax1.axis('off')
 
     ax2 = plt.subplot(gs[0, 2:])
     line, = ax2.plot([], [], color='red', alpha=1, lw=4)
     courbe, = ax2.plot([], [], color='dodgerblue', alpha=1, lw=2)
     x = np.linspace(-2, 1, 400)
-    ax2.plot(x, x, color='green')
+    ax2.plot(x, x, color='orange')
 
     ax3 = plt.subplot(gs[1, 1:3])
     x_vals, y_vals = bifurcation(show=False)
@@ -215,7 +220,11 @@ def connections():
         line.set_data(zip(*mandel_branch_points(.01, 0.3-0.01*i)))
         courbe.set_data(x, x**2+(0.3-0.01*i))
         xl.set_data((.3-0.01*i)*200+300, [0,400])
-        xl3.set_data(1.3+.015*i,[0,1])
+        #xl3.set_dat(1.4+.015*i,[0,1])
+        if(i <= 105):
+            xl3.set_data(51/52+i/52,[0,1])
+        else:
+            xl3.set_data(2.0655+0.0089*i,[0,1])
         return courbe, xl,
 
     script_dir = os.path.dirname(__file__)
@@ -224,6 +233,6 @@ def connections():
         os.makedirs(results_dir)
 
     ani_three = animation.FuncAnimation(
-        fig, animate, init_func=init, frames=180, interval=20, repeat=False) 
-    FFwriter = animation.FFMpegWriter(fps=10)     
+        fig, animate, init_func=init, frames=180, interval=20, repeat=False)
+    FFwriter = animation.FFMpegWriter(fps=10)
     ani_three.save(os.path.join(results_dir, 'les_3.avi'), writer = FFwriter, dpi=300)
