@@ -1,4 +1,5 @@
 ![Python package](https://github.com/tanglef/chaoseverywhere/workflows/Python%20package/badge.svg?branch=master)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/54f7902ce179418982696c32613b98e7)](https://app.codacy.com/manual/tanglef/chaoseverywhere?utm_source=github.com&utm_medium=referral&utm_content=tanglef/chaoseverywhere&utm_campaign=Badge_Grade_Dashboard)
 [![Documentation Status](https://readthedocs.org/projects/chaoseverywhere/badge/?version=latest)](https://chaoseverywhere.readthedocs.io/en/latest/?badge=latest)
 
 ## Overview
