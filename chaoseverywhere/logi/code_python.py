@@ -80,7 +80,7 @@ def bifurcation(show=True):
 
 def logi_branch_points(x0, mu, nb_iter=100):
     """It creates of the logistic sequence points.
-    
+
     This function makes all coordinates of the sequence's points and puts them in a list. It creates stairs too.
 
     :param x0: the starting point included in [0,1]

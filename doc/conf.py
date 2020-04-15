@@ -85,7 +85,7 @@ sphinx_gallery_conf = {
      # path where to save gallery generated examples
     'gallery_dirs': gallery_dirs,
     # order of the Gallery
-    'line_numbers': True,
+    'line_numbers': False,
     'image_scrapers': image_scrapers,
     'show_memory': False,
 }
