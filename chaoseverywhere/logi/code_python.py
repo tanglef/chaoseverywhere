@@ -128,7 +128,7 @@ def plot_logi_interact(x0,mu,nb_iter=100,linsdim=100):
 
 def animate_logistic(save=False):
     """ This function represents the evolution of the logistic map.
-    
+
     We can see the creation of the sequence step by step. The graph of the function is animated.
     It shows the convergence of the sequence when r is small enough, then, the chaotic representation.
 

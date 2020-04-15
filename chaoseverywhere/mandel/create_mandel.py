@@ -196,7 +196,7 @@ class Mandelbrot_disp:
             for item in folder:
                 if item.startswith("puiss"):
                     os.remove(os.path.join(results_dir, item))
-        
+
     def mandel_transform(self, FUN):
         """This function determines coordinates of points in the transformation of the Mandelbrot set.
 
@@ -215,7 +215,7 @@ class Mandelbrot_disp:
         for i in range(self.t_max):
             z = FUN(z,c)
             mandel += 1 / float(2 + i) * (z * np.conj(z) > 4)
-        return(mandel)  
+        return(mandel)
 
 
 def mandel_branch_points(x0, mu, nb_iter=20):

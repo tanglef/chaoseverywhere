@@ -14,7 +14,7 @@ An animation of the logistic function
 # However, this modelisation is wrong because it assumes that none of the rabbits died or escaped its cage to go back to the wilderness.
 # So, a way to control this pattern is to multiply :math:`rx_n` by :math:`(1-x_n)`, a factor that, when :math:`x_n` approaches it's maximum, tends to :math:`0`.
 #
-# 
+#
 # Thus the equation of the logistic map is :
 #
 # .. math::
