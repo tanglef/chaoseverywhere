@@ -75,7 +75,7 @@ class Mandelbrot_disp:
 
     def animate_mandel_plt(self, x=-1, y=-.3):
         """Zoom in on the Mandlebrot graph.
-    
+
         This animation zooms in on the point (x,y) to see the fractals.
 
         :param x: coordinate on the real axis of the point to zoom in.

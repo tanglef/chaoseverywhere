@@ -22,7 +22,7 @@ def logistic(r, x):
 
 
 def logistic_draw(x0, r, iteration, points):
-    """ This function is a first way to be able to draw the logistic sequence.
+    """First way to be able to draw the logistic sequence.
 
     It draws the logistic function, the (y=x) line. With these lines, the logistic sequence can be drawn.
 
@@ -59,9 +59,9 @@ def bifurcation(show=True):
     the logistic function. This graph summarizes the different possibilities of the logistic draw according to r.
     The final graph represents bifurcations. When r is equal to 3, we see the first bifurcation.
 
-    :param show: True. Otherwise, the couple of points coordinates.
-    :return: the bifurcation graph
-    :rtype: plot the graph
+    :param show: True. Otherwise, the tuples of points coordinates.
+    :return: the bifurcation graph or the coordinates
+    :rtype: matplotlib graph or list of float tuples
     """
     r = np.linspace(1, 4, 10000)
     x = []
@@ -102,7 +102,7 @@ def logi_branch_points(x0, mu, nb_iter=100):
 
 def plot_logi_interact(x0,mu,nb_iter=100,linsdim=100):
     """ Another way to plot the logistic function which is faster so more pleasant to use with the interaction.
-    
+
     This function creates the logistic sequence. Meaning, we start with x0, then we know the second point
     drawing the 'stair' with (y=x) and the logistic function. And we do it again, up to nb_iter. But here, we know
     all points thanks to the logi_branch_points function.
