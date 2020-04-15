@@ -8,7 +8,7 @@ warnings.filterwarnings("ignore", category=RuntimeWarning)
 
 
 class Mandelbrot_disp:
-    """This class creates the mandlebrot graph and zooms in on this graph.
+    """Creates the mandlebrot graph and zooms in on this graph.
 
     Moreover, there are functions who display the Mandlebrot set in 2D and 3D with animated video.
 
@@ -34,7 +34,7 @@ class Mandelbrot_disp:
         self.precision = precision
 
     def mandelbrot(self):
-        """This function gives a boolean matrix.
+        """Gives a boolean matrix reprensenting the Mandelbrot set.
 
         We affect the value True if the point is in the Mandlebrot set, false otherwise.
 
@@ -74,7 +74,7 @@ class Mandelbrot_disp:
         plt.show()
 
     def animate_mandel_plt(self, x=-1, y=-.3):
-        """This function is able to zoom in on the Mandlebrot graph.
+        """Zoom in on the Mandlebrot graph.
     
         This animation zooms in on the point (x,y) to see the fractals.
 
@@ -113,7 +113,7 @@ class Mandelbrot_disp:
         plt.close()
 
     def mandel_loop(self, go_up=True, puiss=2):
-        """This function determines coordinates of points, in the Mandlebrot set and the speed of divergence.
+        """Determines coordinates of points, in the Mandlebrot set and the speed of divergence.
 
         :param go_up: type of display, condition to give values in mandel's array
         :type: boolean
@@ -137,7 +137,7 @@ class Mandelbrot_disp:
         return(mandel)
 
     def anim_pics_mandel(self, go_up=True, puiss=2):
-        """This function shows the Mandlebrot set in 3D. It saves the video in .avi.
+        """Shows the Mandlebrot set in 3D. It saves the video in .avi.
 
         :param go_up: type of display, using in mandle_loop function
         :type go_up: boolean
@@ -166,7 +166,7 @@ class Mandelbrot_disp:
                   os.path.join(results_dir, "movie.avi"))
 
     def anim_puiss_mandel(self, remove=True):
-        """ This function animates other powers in the Mandeblrot equation.
+        """Animates other powers in the Mandeblrot equation.
 
         As the main equation of the Mandelbrot uses a power of 2, we display here the Mandelbrot set
         for all the integers between 2 and a hundred.
@@ -198,7 +198,7 @@ class Mandelbrot_disp:
                     os.remove(os.path.join(results_dir, item))
 
     def mandel_transform(self, FUN):
-        """This function determines coordinates of points in the transformation of the Mandelbrot set.
+        """Determines coordinates of points in the transformation of the Mandelbrot set.
 
         :param FUN: function that replaces the mandelbrot recursive equation
         :type FUN: function
@@ -219,7 +219,7 @@ class Mandelbrot_disp:
 
 
 def mandel_branch_points(x0, mu, nb_iter=20):
-    """ This function gives the coordinates of Mandlebrot points.
+    """ Fives the coordinates of Mandlebrot points.
 
     Starting with the coordinate of (x0,0), the function applies the Mandlebrot sequence. Each coordinates
     is appended in a list, useful to draw stairs of the recursive sequence.

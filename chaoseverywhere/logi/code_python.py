@@ -9,7 +9,7 @@ warnings.filterwarnings("ignore", category=RuntimeWarning)
 from ..mandel.create_mandel import Mandelbrot_disp, mandel_branch_points
 
 def logistic(r, x):
-    """ This function calculates values of the logisitc function.
+    """ Calculates values of the logisitc function.
 
     :param r: the common ratio
     :type r: float
@@ -53,7 +53,7 @@ def logistic_draw(x0, r, iteration, points):
     plt.show()
 
 def bifurcation(show=True):
-    """ This function builds the bifurcation diagramm of the logistic map.
+    """ Builds the bifurcation diagramm of the logistic map.
     
     The x-axis corresponds to the common ratio, r (in [0,4]), and the y-axis corresponds to the x points of
     the logistic function. This graph summarizes the different possibilities of the logistic draw according to r.
@@ -127,7 +127,7 @@ def plot_logi_interact(x0,mu,nb_iter=100,linsdim=100):
     plt.show()
 
 def animate_logistic(save=False):
-    """ This function represents the evolution of the logistic map.
+    """ Represents the evolution of the logistic map.
 
     We can see the creation of the sequence step by step. The graph of the function is animated.
     It shows the convergence of the sequence when r is small enough, then, the chaotic representation.
@@ -167,7 +167,8 @@ def animate_logistic(save=False):
     else: return(ani)
 
 def connections():
-    """ It shows the link between Mandlebrot, logistic map and bifurcation
+    """ Shows the link between Mandlebrot, logistic map and bifurcation.
+
     This function shows the connections with the two Mandlebrot objects of this package:
     the Mandlebrot set and the logistic map. The moving red line shows the place that we are
     on these three graphs, at the same time.
