@@ -22,6 +22,7 @@ def transform(z,c):
 #mlab.view(elevation=180)
 #mlab.savefig('3d_transform.png')
 #mlab.show()
+print(chaos.Mandelbrot_disp(0,0,10,50,100).mandel_transform(lambda x,c: x**4-x**2+c**2)[10,10])
 
 
 #mandel = chaos.Mandelbrot_disp(1.5,0,2.5, precision=600).mandel_transform(FUN=transform)
