@@ -50,6 +50,7 @@ def logistic_draw(x0, r, iteration, points):
         plt.plot([x0, f_x0], [f_x0, f_x0],
                  color='grey', alpha=0.4)  # intersections
         x0 = f_x0
+    plt.title("Logistic sequence")
     plt.show()
 
 def bifurcation(show=True):
@@ -75,6 +76,8 @@ def bifurcation(show=True):
     
     if show:
         plt.plot(x, y, ls='', marker=',', color='blue')
+        plt.title("Bifurcation")
+        plt.xlabel("r")
         plt.show()
     else: return(x,y)
 
@@ -94,7 +97,7 @@ def logi_branch_points(x0, mu, nb_iter=100):
     """
     points = [(x0,0)]
     for _ in range(nb_iter):
-        f_x0 = logistic(mu,x0)
+        f_x0 = logistic(r=mu,x=x0)
         points.append((x0,f_x0))
         points.append((f_x0,f_x0))
         x0 = f_x0
@@ -122,8 +125,9 @@ def plot_logi_interact(x0,mu,nb_iter=100,linsdim=100):
     vals = np.linspace(0,1,linsdim)
     plt.figure()
     plt.plot(vals,vals)
-    plt.plot(vals, logistic(mu,vals))
+    plt.plot(vals, logistic(r=mu,x=vals))
     plt.plot(x,y,'k',color='red', alpha=.3)
+    plt.suptitle("Logistic sequence depending on r")
     plt.show()
 
 def animate_logistic(save=False):
