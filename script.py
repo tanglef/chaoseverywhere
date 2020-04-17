@@ -37,14 +37,16 @@ def transform(z,c):
 #print(chaos.logi_branch_points(0.01,2,10))
 #chaos.connections()
 
-plt.style.use(['ggplot', 'dark_background'])
-data = zip(*chaos.mandel_branch_points(0,-1,50))
-ax2 = plt.subplot()
-x = np.linspace(-2, 1, 400)
-line, = ax2.plot([],[], color='red', alpha=1, lw=4)
-line.set_data(data)
-courbe, = ax2.plot([], [], color='dodgerblue', alpha=1, lw=2)
-courbe.set_data(x, x**2-1)
-ax2.plot(x, x, color='orange')
-plt.show()
+import chaoseverywhere as chaos
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.signal import convolve2d
 
+mandel = chaos.Mandelbrot_disp(-.5, 0, 1.5).mandelbrot()
+kernel_edge_detect = np.array([[-1, -1, -1], [-1, 8, -1], [-1, -1, -1]])
+pad_mandel = np.pad(mandel, ((1, 1), (1, 1)), "maximum")
+bound = convolve2d(pad_mandel, kernel_edge_detect, mode='valid').astype(bool) * mandel
+
+plt.imshow(bound, cmap='bone')
+plt.axis('off')
+plt.show()
