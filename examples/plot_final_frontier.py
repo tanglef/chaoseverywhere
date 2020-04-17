@@ -10,7 +10,7 @@ Convolution and frontier of the Mandelbrot set
 # In our case, we will use a :math:`3\times 3` kernel. So, the convolution of a kernel with a matrix is defined as the
 # sum of the conter-row-wise by row-wise product of the elements ie the last element of the kernel is multiplied by the first of the matrix,
 # the penultimate of the kernel (at the left of the last) is multiplied by the seconde one of the matrix (at the right of the first) and so
-# on with the antepenultimate to the first one. In a formula we have :
+# on from the antepenultimate to the first one. In a formula we have :
 #
 # .. math::
 #
