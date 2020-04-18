@@ -1,7 +1,7 @@
-<div style="text-align:center">
-<span style="text-indent:25px; color:gray; font-size:20px">   CHAOS  </span>
-<img src="./doc/_static/logo1_f.svg" style="vertical-align:middle" width="200" class='center' alt='logo'>
-<span style="text-indent:25px; color:gray;font-size:20px">   EVERYWHERE</span></div>
+<p align="center">
+  <strong> CHAOSEVERYWHERE </strong> <br>
+<img src="./doc/_static/logo1_f.svg" style="vertical-align:middle" width="500" height='200' class='center' alt='logo'>
+</p>
 
 ![Python package](https://github.com/tanglef/chaoseverywhere/workflows/Python%20package/badge.svg?branch=master)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/54f7902ce179418982696c32613b98e7)](https://app.codacy.com/manual/tanglef/chaoseverywhere?utm_source=github.com&utm_medium=referral&utm_content=tanglef/chaoseverywhere&utm_campaign=Badge_Grade_Dashboard)
