@@ -2,8 +2,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 
-MAX_ITER = 120 #nécessairement inférieure à 255
-R=4
 def mandelbrot(c,MAX_ITER,R):
     z=0
     i=0
@@ -21,10 +19,10 @@ def histogram():
     maxx=2
     miny=-2
     maxy=2
-    Nx=1024 #nombre de pixels hauteur
-    Ny=1024 #nombre de pixels largeur
-    Nb_trait=64 #nombre de barres dans l'histogramme, puissance de 2 de préférence
-    haut_hist=1000 #c'est pour discrétiser l'image de l'histogramme, plus c'est grand plus c'est précis.
+    Nx=1024 #number of pixels height
+    Ny=1024 #number of pixels width
+    Nb_trait=64 #number of bars in the histogram, preferably a power of 2
+    haut_hist=1000 #to discretize the image of the histogram, the larger it is the more precise the histogram will be.
     lgn_hist=Nb_trait
     couleur0=(0.3,1,0.3)
     couleur1=(0.3,0.3,1)
@@ -38,7 +36,7 @@ def histogram():
     for i in range(Ny):
         for j in range(Nx):
             x=minx+(maxx-minx)*j/Nx
-            y=miny+(maxx-minx)*(Ny-i)/Ny
+            y=miny+(maxy-miny)*(Ny-i)/Ny
             c=x+y*1j
             M[i,j]=mandelbrot(c,MAX_ITER,R)
             histogram[M[i,j]//long_trait]+=1
