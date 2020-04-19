@@ -40,7 +40,7 @@ release = '0.0.1'
 extensions = [
     'sphinx.ext.autodoc',
     'sphinx_gallery.gen_gallery',
-    'sphinx.ext.mathjax'
+    'sphinx.ext.mathjax',
     # use napoleon if you want your doc in Numpy style ?
 ]
 
@@ -85,8 +85,7 @@ sphinx_gallery_conf = {
      # path where to save gallery generated examples
     'gallery_dirs': gallery_dirs,
     # order of the Gallery
-    'within_subsection_order': FileNameSortKey,
-    'line_numbers': True,
+    'line_numbers': False,
     'image_scrapers': image_scrapers,
     'show_memory': False,
 }

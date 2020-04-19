@@ -82,7 +82,7 @@ class Mandelbrot_disp:
             mlab.savefig(imgname)
         mlab.close()
         shutil.rmtree(results_dir)
-    
+
     #profile
     def animate_mandel_plt(self):
         im_init = self.mandelbrot()
@@ -145,7 +145,7 @@ if __name__ == "__main__":
     Mandelbrot_disp(-.5,0,1,100,400).disp_mandel()
     time.sleep(10)
     Mandelbrot_disp(-.5,0,1,100,400).anim_pics_mandel()
-    time.sleep(10)    
+    time.sleep(10)
     logistic_draw(.01,2.7,50,100)
     time.sleep(10)
     Mandelbrot_disp(-.5,0,1,100,400).animate_mandel_plt()
