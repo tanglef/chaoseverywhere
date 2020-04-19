@@ -94,7 +94,7 @@ def logi_branch_points(x0, mu, nb_iter=100):
     """
     points = [(x0,0)]
     for _ in range(nb_iter):
-        f_x0 = logistic(mu,x0)
+        f_x0 = logistic(r=mu,x=x0)
         points.append((x0,f_x0))
         points.append((f_x0,f_x0))
         x0 = f_x0
@@ -122,7 +122,7 @@ def plot_logi_interact(x0,mu,nb_iter=100,linsdim=100):
     vals = np.linspace(0,1,linsdim)
     plt.figure()
     plt.plot(vals,vals)
-    plt.plot(vals, logistic(mu,vals))
+    plt.plot(vals, logistic(r=mu,x=vals))
     plt.plot(x,y,'k',color='red', alpha=.3)
     plt.show()
 

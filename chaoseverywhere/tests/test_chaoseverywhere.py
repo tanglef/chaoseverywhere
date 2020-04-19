@@ -8,7 +8,6 @@ sys.path.append(os.path.dirname(os.path.abspath(__file__)) + (os.path.sep + '..'
 
 import chaoseverywhere as chaos
 
-
 def test_mandel():
     test = chaos.Mandelbrot_disp(-.5, 0, 1,t_max=10,precision=20).mandelbrot()
     assert test[0,0] == True
@@ -26,3 +25,6 @@ def test_mandel_branch_points():
 
 def test_bifurcation():
     assert np.isclose(chaos.bifurcation(show=False)[0][18], 1.0054005400540054)
+
+def test_mandel_transform():
+    assert np.isclose(chaos.Mandelbrot_disp(0,0,10,50,100).mandel_transform(lambda x,c: x**4-x**2+c**2)[10,10], 1.2833333333333332)
