@@ -174,7 +174,7 @@ def connections():
     on these three graphs, at the same time.
     It saves the video in .avi in the 'temp' directory.
 
-    :rtype: .avi file
+    :rtype: Matplotlib animation and a save in a .avi format
     """
     fig=plt.figure()
     plt.style.use(['ggplot', 'dark_background'])
@@ -236,3 +236,4 @@ def connections():
         fig, animate, init_func=init, frames=180, interval=20, repeat=False)
     FFwriter = animation.FFMpegWriter(fps=10)
     ani_three.save(os.path.join(results_dir, 'les_3.avi'), writer = FFwriter, dpi=300)
+    return(ani_three)
