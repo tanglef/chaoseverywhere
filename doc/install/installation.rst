@@ -20,7 +20,7 @@ Special dependencies
 In order to fully use this package, one must have Mayavi installed and ready to use and also the FFMPEG writer.
 
 * Mayavi: VTK and PyQt5 (or another supported GUI toolkit for Python 3) are necessary please refer to `this tutorial`_.
-* FFMPEG: simply run :bash`sudo apt install ffmpeg` if you're using a UBUNTU distribution.
+* FFMPEG: simply run :bash:`sudo apt install ffmpeg` if you're using a UBUNTU distribution.
 
 .. _this tutorial: https://docs.enthought.com/mayavi/mayavi/installation.html
 
