@@ -19,6 +19,14 @@ Guide
 
 .. toctree::
    :maxdepth: 2
+   :Caption: Installation, contacts and sources
+
+   install/installation
+   install/contacts
+   install/sources_more
+
+.. toctree::
+   :maxdepth: 2
    :caption: Mandelbrot
 
    chaos/mandel
@@ -42,13 +50,6 @@ Guide
    _auto_scripts/index
    chaos/gallery_mayavi/gallery_mayavi
 
-.. toctree::
-   :maxdepth: 2
-   :Caption: Installation, contacts and sources
-
-   install/installation
-   install/contacts
-   install/sources_more
 
 Indices and tables
 ==================
