@@ -6,7 +6,7 @@ The bifurcation diagram
 #############################
 # Link to the logistic map
 # -----------------------------
-# It is very easy to build the logistic diagram. You only need to iterate the logistic map long enough for a value
+# It is very easy to build the bifurcation diagram of the logistic map. You only need to iterate the logistic map long enough for a value
 # of :math:`r` (:math:`x_{n+1}=rx_n(1-x_n)`) and then plot the last point. The goal of iterating the sequence a lot of time is to see where
 # the points are attracted to.
 # If you only need the values of the bifurcation diagram and not the actual plot, only pass the value False to the argument show.
