@@ -100,7 +100,7 @@ def logi_branch_points(x0, mu, nb_iter=100):
         x0 = f_x0
     return points
 
-def plot_logi_interact(x0,mu,nb_iter=100,linsdim=100):
+def plot_logi_interact(x0, r, nb_iter=100, linsdim=100, colors='red'):
     """ Another way to plot the logistic function which is faster so more pleasant to use with the interaction.
 
     This function creates the logistic sequence. Meaning, we start with x0, then we know the second point
@@ -109,21 +109,22 @@ def plot_logi_interact(x0,mu,nb_iter=100,linsdim=100):
 
     :param x0: the starting point included in [0,1]
     :type x0: float
-    :param mu: the common ratio
-    :type mu: float
+    :param r: the growth ratio
+    :type r: float
     :param nb_iter: the number of iterations of the sequence
     :type nb_iter: integer
     :param linsdim: number of points between 0 and 1 on the x-axis
     :type linsdim: integer
+    :param colors: color for the cobweb
+    :type colors: string
     :return: graph representing logistic sequence
     :rtype: matplotlib plot
     """
-    x,y=zip(*logi_branch_points(x0, mu, nb_iter))
-    vals = np.linspace(0,1,linsdim)
-    plt.figure()
-    plt.plot(vals,vals)
-    plt.plot(vals, logistic(r=mu,x=vals))
-    plt.plot(x,y,'k',color='red', alpha=.3)
+    x,y = zip(*logi_branch_points(x0, r, nb_iter))
+    vals = np.linspace(0, 1, linsdim)
+    plt.plot(vals,vals, color='dodgerblue')
+    plt.plot(vals, logistic(r=r,x=vals), color='orange')
+    plt.plot(x, y, 'k', color=colors)
     plt.show()
 
 def animate_logistic(save=False):
@@ -152,7 +153,7 @@ def animate_logistic(save=False):
     def animate(i):
         line.set_data(zip(*logi_branch_points(.01, 1.015+i*0.015)))
         courbe.set_data(x, logistic(1.015+i*.015,x))
-        ax.set_title(u"mu = {0:.3f}".format(1.015+i*0.015))
+        ax.set_title(u"r = {0:.3f}".format(1.015+i*0.015))
         return line, courbe,
 
     ani = animation.FuncAnimation(
