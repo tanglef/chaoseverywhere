@@ -119,7 +119,7 @@ for the actual plot.
 .. autofunction:: chaoseverywhere.mandel.create_mandel.mandel_branch_points
 
 
-One can use this function to produce the same plot of the video using the code below.
+One can use this function to produce the same plot in the top-right of the video in the bifurcation diagram section of the gallery using the code below.
 
 .. code-block:: python
 

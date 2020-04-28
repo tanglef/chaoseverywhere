@@ -5,7 +5,7 @@
 Before using the `memory_graph.py` file, one must replace at lines 19, 41, 58, 65, 86, 116 and 136 the `#` with a `@` so that the `memory_profiler` and github can both be used.
 :information_source: :warning:
 
-**Chosen functions** : We chose to only run functions that are the root of this module. Indeed, in most of the animations, we create the background once and then only add points or move around the structure. So the main question is not *How long does it take to render the movie?* but rather *How long does it take to produce each part of the movie?*
+**Chosen functions** : We chose to only run functions that are the root of this module. Indeed, in most of the animations, we create the background once and then only add points or move around the structure. So the main question is not *How long does it take to render the movie?* but rather *How long does it take to produce each part of the movie?* We only applied the saying: *a chain is only as strong as its weakest link*.
 
 ## Time elapsed
 
