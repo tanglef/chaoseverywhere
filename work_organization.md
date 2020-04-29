@@ -17,8 +17,8 @@ The schedule that we've predicted is :
 
 - Mandlebrot 2D init is completed since at least April 25
 - Mandlebrot 3D init is completed since at least April 25
-- Class of Mandlebrot 2D : April 20 finished
-- Class of Mandlebrot 3D (included in Class of Mandlebrot 2D) : April 20 finished
+- Class of Mandlebrot 2D is completed since at least April 25
+- Class of Mandlebrot 3D (included in Class of Mandlebrot 2D) is completed since at least April 25
 - Logisitc init is completed since at least April 25
 - Logistic push further : April 26 finished
 - Report init will be finished May 2
