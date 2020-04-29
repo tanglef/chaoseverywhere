@@ -17,15 +17,15 @@ The schedule that we've predicted is :
 
 - Mandlebrot 2D init is completed since at least April 25
 - Mandlebrot 3D init is completed since at least April 25
-- Class of Mandlebrot 2D : April 1 finished
-- Class of Mandlebrot 3D : April 26 finished
+- Class of Mandlebrot 2D : April 20 finished
+- Class of Mandlebrot 3D (included in Class of Mandlebrot 2D) : April 20 finished
 - Logisitc init is completed since at least April 25
 - Logistic push further : April 26 finished
 - Report init will be finished May 2
 - Beamer will be finished one week before due date (hopes) !!
 - Test functions will be finished, the ones for 2D, before April 10 and others when we will need of them
 - Sphinx is completed since at least April 25
-- Report widgets will be done by May 2, properly
+- Report widgets : April 28 finished
 - Sparse matrix : April 12 finished
 - Histogram : April 26 finished
 - Animations : April 26 finished
