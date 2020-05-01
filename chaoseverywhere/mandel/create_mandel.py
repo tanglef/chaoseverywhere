@@ -43,7 +43,7 @@ class Mandelbrot_disp:
         """
         x, y, facteur, maxiteration, precision = self.x, self.y, self.facteur, \
         self.t_max, self.precision
-        # définit l'espace avec une matrice
+        # define the space using matrix
         X, Y = np.meshgrid(np.linspace(x-facteur, x+facteur, precision),
                            np.linspace(y-facteur, y+facteur, precision),
                            sparse=True)
