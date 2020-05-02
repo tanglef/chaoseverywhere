@@ -39,7 +39,3 @@ def test_plot_log():
 
 def test_logi_branch():
     assert chaos.logi_branch_points(0.1,2,100)[-1] == (0.5, 0.5)
-
-def test_connections():
-    assert chaos.connections().__class__.__name__ == 'FuncAnimation'
-
