@@ -2,6 +2,7 @@ import os.path
 import sys
 import numpy as np
 import warnings
+import matplotlib.pyplot as plt
 warnings.filterwarnings("ignore", category=RuntimeWarning)
 
 sys.path.append(os.path.dirname(os.path.abspath(__file__)) + (os.path.sep + '..')*2)
@@ -28,3 +29,17 @@ def test_bifurcation():
 
 def test_mandel_transform():
     assert np.isclose(chaos.Mandelbrot_disp(0,0,10,50,100).mandel_transform(lambda x,c: x**4-x**2+c**2)[10,10], 1.2833333333333332)
+
+def test_plot_log():
+    plt.ion()
+    chaos.logistic_draw(.01, 3,100,200)
+    num = plt.get_fignums()
+    plt.close()
+    assert(num == [1])
+
+def test_logi_branch():
+    assert chaos.logi_branch_points(0.1,2,100)[-1] == (0.5, 0.5)
+
+def test_connections():
+    assert chaos.connections().__class__.__name__ == 'FuncAnimation'
+
