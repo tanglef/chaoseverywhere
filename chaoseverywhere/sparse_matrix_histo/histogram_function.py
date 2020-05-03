@@ -16,7 +16,7 @@ def histogram(x=-.5, y=0, window=1.5):
     :return: histogram
     :rtype: matplotlib plot
     """
-    mandel = Mandelbrot_disp(-.5,0,1.5).mandel_loop()
+    mandel = Mandelbrot_disp(x, y, window).mandel_loop()
     data = np.array(np.unique(mandel,return_counts=True)).T
     plt.style.use('ggplot')
     plt.figure()
