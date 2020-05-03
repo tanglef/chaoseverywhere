@@ -43,22 +43,21 @@ class Mandelbrot_disp:
         """
         x, y, facteur, maxiteration, precision = self.x, self.y, self.facteur, \
         self.t_max, self.precision
-        # définit l'espace avec une matrice
+        # define the space using matrix
         X, Y = np.meshgrid(np.linspace(x-facteur, x+facteur, precision),
                            np.linspace(y-facteur, y+facteur, precision),
                            sparse=True)
-        c = X+1j*Y  # nombre complex écrit avec des matrices
+        c = X+1j*Y  # complex matrix
         z = c
-        # matrice booléenne qui vérifie la condition sur (z_n)
+        # boolean matrix for the mandelbrot condition
         pasbornee = np.zeros(z.shape, dtype=bool)
         for _ in range(maxiteration):
             z = z**2+c
-            matrice = abs(z) > 2  # condition sur le cercle
-            nouvelle = matrice & ~pasbornee  # le ~est la négation logique
+            matrice = abs(z) > 2  # inside circle
+            nouvelle = matrice & ~pasbornee  # logical opposition
             pasbornee[nouvelle] = True
-            # valeur arbitraire pour éviter les overflow je limite la valeur =>
+            # avoid overflows
             z[matrice] = 1
-            # prévient le problème des deux ci-dessous
         return pasbornee
 
     def disp_mandel(self):
