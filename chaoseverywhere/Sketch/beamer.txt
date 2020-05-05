@@ -1,0 +1,212 @@
+\documentclass[10pt]{beamer}
+\usepackage[utf8x]{inputenc}
+\usepackage{hyperref}
+\usepackage{fontawesome}
+\usepackage{graphicx}
+\usepackage[english,ngerman]{babel}
+
+% ------------------------------------------------------------------------------
+% Use the beautiful metropolis beamer template
+% ------------------------------------------------------------------------------
+\usepackage[T1]{fontenc}
+\usepackage{fontawesome}
+\usepackage{FiraSans} 
+\mode<presentation>
+{
+  \usetheme[progressbar=foot,numbering=fraction,background=light]{metropolis} 
+  \usecolortheme{default} % or try albatross, beaver, crane, ...
+  \usefonttheme{default}  % or try serif, structurebold, ...
+  \setbeamertemplate{navigation symbols}{}
+  \setbeamertemplate{caption}[numbered]
+  %\setbeamertemplate{frame footer}{My custom footer}
+} 
+
+% ------------------------------------------------------------------------------
+% beamer doesn't have texttt defined, but I usually want it anyway
+% ------------------------------------------------------------------------------
+\let\textttorig\texttt
+\renewcommand<>{\texttt}[1]{%
+  \only#2{\textttorig{#1}}%
+}
+
+% ------------------------------------------------------------------------------
+% minted
+% ------------------------------------------------------------------------------
+\usepackage{minted}
+
+
+% ------------------------------------------------------------------------------
+% tcolorbox / tcblisting
+% ------------------------------------------------------------------------------
+\usepackage{xcolor}
+\definecolor{codecolor}{HTML}{FFC300}
+
+\usepackage{tcolorbox}
+\tcbuselibrary{most,listingsutf8,minted}
+
+\tcbset{tcbox width=auto,left=1mm,top=1mm,bottom=1mm,
+right=1mm,boxsep=1mm,middle=1pt}
+
+\newtcblisting{myr}[1]{colback=codecolor!5,colframe=codecolor!80!black,listing only, 
+minted options={numbers=left, style=tcblatex,fontsize=\tiny,breaklines,autogobble,linenos,numbersep=3mm},
+left=5mm,enhanced,
+title=#1, fonttitle=\bfseries,
+listing engine=minted,minted language=r}
+
+
+% ------------------------------------------------------------------------------
+% Listings
+% ------------------------------------------------------------------------------
+\definecolor{mygreen}{HTML}{37980D}
+\definecolor{myblue}{HTML}{0D089F}
+\definecolor{myred}{HTML}{98290D}
+
+\usepackage{listings}
+
+% the following is optional to configure custom highlighting
+\lstdefinelanguage{XML}
+{
+  morestring=[b]",
+  morecomment=[s]{<!--}{-->},
+  morestring=[s]{>}{<},
+  morekeywords={ref,xmlns,version,type,canonicalRef,metr,real,target}% list your attributes here
+}
+
+\lstdefinestyle{myxml}{
+language=XML,
+showspaces=false,
+showtabs=false,
+basicstyle=\ttfamily,
+columns=fullflexible,
+breaklines=true,
+showstringspaces=false,
+breakatwhitespace=true,
+escapeinside={(*@}{@*)},
+basicstyle=\color{mygreen}\ttfamily,%\footnotesize,
+stringstyle=\color{myred},
+commentstyle=\color{myblue}\upshape,
+keywordstyle=\color{myblue}\bfseries,
+}
+
+
+% ------------------------------------------------------------------------------
+% The Document
+% ------------------------------------------------------------------------------
+\title{Chaos evrywhere}
+\author{ Lefort Tanguy \\  Coiffier Ophélie \\ Gaizi Ibrahim}
+\date{}
+\input{./pack_code.tex}
+
+\begin{document}
+
+\maketitle
+\begin{frame}{Table of Contents}
+
+\begin{enumerate}
+    \item  Generalities
+    \item  The logistic map
+    \begin{itemize}
+        \item 
+        \item 
+    \end{itemize}
+    \item  The Mandelbrot set
+        \begin{itemize}
+        \item mandel loop function : 
+        \item Colored Mandelbrot : 
+    \end{itemize}
+    \item Animation?
+        \begin{itemize}
+        \item 
+        \item 
+    \end{itemize}
+\end{enumerate}
+\end{frame}
+\section{Introduction}
+
+\begin{frame}[fragile]{Introduction}
+dd
+\framebreak
+
+
+
+
+\end{frame}
+
+
+\section{Generalities}
+
+\begin{frame}[fragile]{Generalities}
+Th
+\end{frame}
+
+\section{The logistic map}
+
+\begin{frame}[fragile]
+\frametitle{The logistic map : an exemple}
+\begin{center}
+    \includegraphics[scale=0.32]{logistic_map.pdf}
+\end{center}
+\begin{lstlisting}
+chaos.logistic_draw(0.01, 3.6, 50, 100)
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{The logistic map : an animation}
+METTRE ANIMATION
+\begin{lstlisting}
+ani = chaos.animate_logistic(save=False)
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{The bifurcation diagram}
+\begin{center}
+    \includegraphics[scale=0.3]{bifurcation.pdf}
+\end{center}
+\begin{lstlisting}
+chaos.bifurcation(show=True)
+\end{lstlisting}
+\end{frame}
+
+\section{The Mandelbrot set}
+
+\begin{frame}[fragile]{ The Mandelbrot set : Mondel loop function :}
+\begin{lstlisting}[language=Python, caption={}]movie 
+def mandel_loop(self, go_up=True, puiss=2):
+    x, y = np.ogrid[self.x - self.facteur:self.x +
+                 self.facteur:(self.precision * 1j),
+                 self.y - self.facteur:self.y +
+                 self.facteur:(self.precision * 1j)]
+        c = x + 1j * y
+        z = np.zeros(c.shape)
+        mandel = np.zeros(c.shape)
+        for i in range(self.t_max):
+            z = z ** puiss + c
+            if go_up:
+                mandel += 1 / float(2 + i)
+                * (z * np.conj(z) > 4)
+            else:
+                mandel[z*np.conj(z) > 4] = i
+        return(mandel)
+\end{lstlisting}
+
+
+
+\end{frame}
+
+\begin{frame}{The Mandelbrot set : Colored Mandelbrot}
+
+\includegraphics[scale=0.3]{Colored MD.pdf}
+
+\end{frame}
+
+
+
+\begin{frame}[fragile]{ Animation?}
+ds
+\end{frame}
+
+
+
+\end{document}

@@ -1,0 +1,45 @@
+\usepackage{listings}
+\usepackage{color}
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+\lstset{
+  language=Python,                     
+  basicstyle=\footnotesize,       
+  numbers=left,                   
+  numberstyle=\tiny\color{gray},  
+  stepnumber=1,                   
+  numbersep=5pt,                  
+  backgroundcolor=\color{white},  
+  showspaces=false,               
+  showstringspaces=false,         
+  showtabs=false,                 
+  frame=single,                   
+  rulecolor=\color{black},        
+  tabsize=2,                      
+  captionpos=b,                   
+  breaklines=true,                
+  breakatwhitespace=false,        
+  title=\lstname,                 
+  keywordstyle=\color{blue},      
+  commentstyle=\color{dkgreen},     
+  stringstyle=\color{mauve},      
+  morekeywords={*,...}   
+} 
+ \lstset{literate=
+  {�}{{\'a}}1 {�}{{\'e}}1 {�}{{\'i}}1 {�}{{\'o}}1 {�}{{\'u}}1
+  {�}{{\'A}}1 {�}{{\'E}}1 {�}{{\'I}}1 {�}{{\'O}}1 {�}{{\'U}}1
+  {�}{{\`a}}1 {�}{{\`e}}1 {�}{{\`i}}1 {�}{{\`o}}1 {�}{{\`u}}1
+  {�}{{\`A}}1 {�}{{\'E}}1 {�}{{\`I}}1 {�}{{\`O}}1 {�}{{\`U}}1
+  {�}{{\"a}}1 {�}{{\"e}}1 {�}{{\"i}}1 {�}{{\"o}}1 {�}{{\"u}}1
+  {�}{{\"A}}1 {�}{{\"E}}1 {�}{{\"I}}1 {�}{{\"O}}1 {�}{{\"U}}1
+  {�}{{\^a}}1 {�}{{\^e}}1 {�}{{\^i}}1 {�}{{\^o}}1 {�}{{\^u}}1
+  {�}{{\^A}}1 {�}{{\^E}}1 {�}{{\^I}}1 {�}{{\^O}}1 {�}{{\^U}}1
+  {�}{{\~A}}1 {�}{{\~a}}1 {�}{{\~O}}1 {�}{{\~o}}1
+  {�}{{\oe}}1 {�}{{\OE}}1 {�}{{\ae}}1 {�}{{\AE}}1 {�}{{\ss}}1
+  {?}{{\H{u}}}1 {?}{{\H{U}}}1 {?}{{\H{o}}}1 {?}{{\H{O}}}1
+  {�}{{\c c}}1 {�}{{\c C}}1 {�}{{\o}}1 {�}{{\r a}}1 {�}{{\r A}}1
+  {�}{{\euro}}1 {�}{{\pounds}}1 {�}{{\guillemotleft}}1
+  {�}{{\guillemotright}}1 {�}{{\~n}}1 {�}{{\~N}}1 {�}{{?`}}1
+}
+
