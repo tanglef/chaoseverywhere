@@ -14,7 +14,7 @@ So, please, run this file **before** compiling the beamer presentation.
 $ ffmpeg -version
 ```
 
-if not, please refer to the installation section in the document of chaoseverywhere. :warning:
+if not, please refer to the installation section in the documentation of chaoseverywhere. :warning:
 
 ## Reader
 
