@@ -1,0 +1,82 @@
+\documentclass[11pt, compress]{beamer}
+
+\usepackage{preamb}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Styling for the beamer %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\setbeamertemplate{navigation symbols}{} 
+\usetheme{Warsaw}
+
+\setbeamertemplate{theorem begin}{{
+\inserttheoremheadfont
+\inserttheoremname
+\inserttheorempunctuation
+}}
+
+\setbeamertemplate{theorem end}{}
+\newtheorem{proposition}[theorem]{Proposition}
+
+\theoremstyle{definition}
+\newtheorem{mydef}[theorem]{Définition}
+\makeatletter
+
+%\captionsetup[figure]{labelformat=empty}
+\definecolor{beamer@blendedblue}{rgb}{.75,.2,.2}
+ % 0.8,0.2,0.3 rouge carmin presque rose assez élégant avec rgb
+ %235 77 77 corail
+\setbeamercolor{structure}{fg=beamer@blendedblue}
+\setbeamercolor*{palette quaternary}{fg=black,bg=white!80!gray } %bg=couleur à gauche header back
+\makeatother
+%\setbeamercolor{section in head/foot}{} no touch en fait casse tout
+%\setbeamercolor{subsection in head/foot}{fg=black,bg=gray!30} idem 
+
+\makeatletter
+\defbeamertemplate*{footline}{shadow theme}
+{%
+  \leavevmode%
+  \hbox{\begin{beamercolorbox}[wd=.5\paperwidth,ht=2.5ex,dp=1.125ex,leftskip=.3cm,rightskip=.3cm plus1fil]{title in head/foot}%
+    \usebeamerfont{title in head/foot}\insertshorttitle%
+  \end{beamercolorbox}}%
+  \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.5ex,dp=1.125ex,leftskip=.3cm plus1fil,rightskip=.3cm]{author in head/foot}%
+    \usebeamerfont{author in head/foot}\hfill\insertframenumber\,/\,\inserttotalframenumber
+  \end{beamercolorbox}%
+  \vskip0pt%
+}
+
+\setbeamertemplate{section in toc}{\textcolor{structure.fg}{$\blacktriangleright$}\hspace{1.2 em}~\inserttocsection \\}
+
+%\setbeamertemplate{section in toc}{\inserttocsectionnumber.~\inserttocsection}
+\setbeamercolor*{section in toc}{fg=black}
+\setbeamercolor*{enumerate item}{fg=black}
+\setbeamercolor*{enumerate subitem}{fg=black}
+\newcommand*{\rom}[1]{\expandafter\@slowromancap\romannumeral #1@}
+\makeatother
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% end styling beamer %%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{tcolorbox}
+\newtcolorbox{mybox}{colback=red!5!white,colframe=red!75!black}
+
+\begin{document}
+
+\begin{frame}
+If you're unable to display the animation, click here:
+\href{https://www.youtube.com/watch?v=xYQbqML1eE4}{\beamergotobutton{Youtube}}
+
+\IfFileExists{les_3-1.pdf}{\begin{figure}
+					\animategraphics[controls,width=\linewidth,
+					height=7cm,keepaspectratio]{30}{les_3-}{1}{360}
+     				\end{figure}
+     					}{\begin{center}
+     						\begin{mybox}
+     						\centering
+     						\Large{Please click on the link above to see one \\
+     													 wonderful animation!}
+     						\end{mybox}
+						\end{center}     				
+     					}
+
+\end{frame}
+
+\end{document}

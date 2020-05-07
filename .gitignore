@@ -16,3 +16,16 @@ anim_tests
 _build
 *_auto_scripts*
 sparse_matrix__histo
+
+
+*.aux
+*.bcf
+*.log
+*.nav
+*.out
+animate_connection.pdf
+*.xml
+*.snm
+*.gz
+*.toc
+les_3-*

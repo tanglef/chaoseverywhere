@@ -3,7 +3,7 @@ The logistic map
 
 Definitions
 --------------------
-The logistic map is a recusive sequence defined as:
+The logistic map is a recursive sequence defined as:
 
 .. math::
 
