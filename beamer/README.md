@@ -8,9 +8,11 @@ The `generate_animation_data.py` file will create a folder in the current direct
 
 So, please, run this file **before** compiling the beamer presentation.
 
-:warning: This file calls the FFMPEG software, it must be installed and accesible in the command prompt. The following command must work:
+:warning: This file calls the FFMPEG software, it must be installed and accesible in the command prompt as dicted in the installation section of the documentation. The following command must work:
 
-<p align=center> $ ffmpeg -version </p>
+```console
+$ ffmpeg -version
+```
 
 if not, please refer to the installation section in the document of chaoseverywhere. :warning:
 
