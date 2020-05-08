@@ -74,6 +74,7 @@ def bifurcation(show=True):
         y.append(x0)
     
     if show:
+        plt.figure()
         plt.plot(x, y, ls='', marker=',', color='blue')
         plt.show()
     else: return(x,y)

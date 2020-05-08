@@ -1,7 +1,7 @@
 \documentclass[11pt, compress]{beamer}
 
 \usepackage{preamb}
-
+\graphicspath{{./../doc/_images/}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Styling for the beamer %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -22,10 +22,11 @@
 \makeatletter
 
 %\captionsetup[figure]{labelformat=empty}
-\definecolor{beamer@blendedblue}{rgb}{.75,.2,.2}
+\definecolor{beamer@blendedpurp}{rgb}{0.41, 0.16, 0.38}
  % 0.8,0.2,0.3 rouge carmin presque rose assez élégant avec rgb
  %235 77 77 corail
-\setbeamercolor{structure}{fg=beamer@blendedblue}
+ % .75 ,.2,.2 rouge clair 
+\setbeamercolor{structure}{fg=beamer@blendedpurp}
 \setbeamercolor*{palette quaternary}{fg=black,bg=white!80!gray } %bg=couleur à gauche header back
 \makeatother
 %\setbeamercolor{section in head/foot}{} no touch en fait casse tout
@@ -44,7 +45,7 @@
   \vskip0pt%
 }
 
-\setbeamertemplate{section in toc}{\textcolor{structure.fg}{$\blacktriangleright$}\hspace{1.2 em}~\inserttocsection \\}
+%\setbeamertemplate{section in toc}{\textcolor{structure.fg}{$\blacktriangleright$}\hspace{1.2 em}~\inserttocsection \\}
 
 %\setbeamertemplate{section in toc}{\inserttocsectionnumber.~\inserttocsection}
 \setbeamercolor*{section in toc}{fg=black}
@@ -58,15 +59,66 @@
 \usepackage{tcolorbox}
 \newtcolorbox{mybox}{colback=red!5!white,colframe=red!75!black}
 
+
+\title{Package chaoseverywhere}
+\subtitle{Software development HMMA238}
+\author{\vspace*{-1.5cm}Lefort Tanguy, Coiffier Ophélie and Gaizi Ibrahim}
+\date{\vspace*{-2cm}06-2020}
+\institute[Montpellier University]{University of Montpellier}
+\titlegraphic{%
+  \makebox[0.9\paperwidth]{%
+    \includegraphics[scale=.2]{logo1_f.pdf}%
+    \hfill%
+    \includegraphics[scale=.1]{logo_univ.pdf}%
+  }%
+}
+
 \begin{document}
 
+{
+\def\mytitleframe{\bgroup
+\makeatletter
+\setbeamertemplate{footline}
+{%
+  \leavevmode%
+  \hbox{\begin{beamercolorbox}[wd=.5\paperwidth,ht=2.5ex,dp=1.125ex,leftskip=.3cm,rightskip=.3cm plus1fil]{title in head/foot}%
+    \usebeamerfont{title in head/foot}\insertshorttitle%
+  \end{beamercolorbox}}%
+  \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.5ex,dp=1.125ex,leftskip=.3cm plus1fil,rightskip=.3cm]{author in head/foot}%
+    \usebeamerfont{author in head/foot}%\hfill\insertframenumber\,/\,\inserttotalframenumber
+  \end{beamercolorbox}%
+  \vskip0pt%
+}
+\maketitle
+\egroup
+\addtocounter{framenumber}{-1}
+}
+\makeatother
+	\mytitleframe
+}
+
+
+\section*{Contents}
+\setbeamertemplate{background}{%
+   \tikz\node[opacity=0.2] at (current page.center) {
+   					\includegraphics[trim = 1.1cm 0cm 0cm 0cm]{logo1_f.pdf}};}
 \begin{frame}
+\frametitle{Table of contents}
+  \tableofcontents
+\end{frame}      
+\setbeamertemplate{background}{}
+
+
+\section[Link]{Mandelbrot set and bifurcation diagram}
+
+\begin{frame}
+\frametitle{Link between Mandelbrot set and bifurcation diagram}
 If you're unable to display the animation, click here:
 \href{https://www.youtube.com/watch?v=xYQbqML1eE4}{\beamergotobutton{Youtube}}
 
 \IfFileExists{./img_connections/les_3-1.pdf}{\begin{figure}
 					\animategraphics[controls,width=\linewidth,
-					height=7cm,keepaspectratio]{30}{./img_connections/les_3-}{1}{360}
+					height=6cm,keepaspectratio]{30}{./img_connections/les_3-}{1}{360}
      				\end{figure}
      					}{\begin{center}
      						\begin{mybox}
