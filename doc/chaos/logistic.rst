@@ -1,6 +1,8 @@
 The logistic map
 =========================
 
+Introduced by the biologist Robert May in 1976, the logistic map turned out to be a lot more complex that meets the eye.
+
 Definitions
 --------------------
 The logistic map is a recursive sequence defined as:

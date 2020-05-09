@@ -2,6 +2,10 @@
 
 \usepackage{preamb}
 \graphicspath{{./../doc/_images/}}
+\usepackage{minted}
+\usemintedstyle{monokai}
+\definecolor{backmonokai}{HTML}{282828}
+\setminted{bgcolor=backmonokai} 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Styling for the beamer %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -117,13 +121,16 @@ Intro
 \section[Logistic map]{The logistic map}
 \subsection{The map}
 
-\begin{frame}{The logistic map: the cobweb diagram}
+\begin{frame}[fragile]{The logistic map: the cobweb diagram}
+\begin{minted}{python}
+	>>> chaos.logistic_draw(0.01, 3.6, 50, 100)
+\end{minted}
+\vspace{-.75cm}
+\begin{figure}[H]
 \begin{center}
-    \includegraphics[scale=0.6]{logistic_cobweb.pdf}
+    \includegraphics<2>[scale=0.55]{logistic_cobweb.pdf}
 \end{center}
-%\begin{lstlisting}
-%chaos.logistic_draw(0.01, 3.6, 50, 100)
-%\end{lstlisting}
+\end{figure}
 \end{frame}
 
 \begin{frame}{Another frame on the logistic map}
@@ -145,7 +152,7 @@ Speak about it (before or after the first one ?????) + behavior
 \subsection{Definition and caracteristics}
 \begin{frame}{The Mandelbrot set: definition}
 
-\begin{block}{Definition}%
+\begin{block}{Definition}
 The Mandelbrot set $\mathcal{M}$ is:
 $$\mathcal{M}=\left\{ c\in\mathbb{C},\ \lim_{n\rightarrow +\infty} z_n <+\infty,\ \text{with } z_{n+1}=z_n^2+c,\ z_0=0\right\}.$$
 \end{block}

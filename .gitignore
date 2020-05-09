@@ -17,10 +17,11 @@ _build
 *_auto_scripts*
 sparse_matrix__histo
 
-
+*minted*
 *.aux
 *.bcf
 *.log
+*.vrb
 *.nav
 *.out
 animate_connection.pdf

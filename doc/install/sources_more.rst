@@ -5,7 +5,8 @@ The mathematics behind and more explainations
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
  
 * `La suite logistique et le chaos`_ by Daniel Perrin,
-* Does God play dice by Ian Stewart.
+* Does God play dice by Ian Stewart,
+* 17 equations that changed the world, chapter 16 by Ian Stewart.
 
 Some inspiring videos
 ^^^^^^^^^^^^^^^^^^^^^^^^
