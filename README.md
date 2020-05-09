@@ -36,4 +36,3 @@ A beamer presentation will be stored in the `.\beamer` folder alongside the nece
 *Tests functions* are implemented in the `.\chaoseverywhere\tests` folder in order to assure the good development of this package. We also used a continuous integration hook action disposed in the `./github/workflows` folder which triggers an action everyday at `5`a.m and at each push.
 
 Every bit of the main code is in the `.\chaoseverywhere` folder.
-

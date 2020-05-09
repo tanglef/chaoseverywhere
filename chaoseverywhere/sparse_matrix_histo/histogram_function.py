@@ -4,7 +4,7 @@ from chaoseverywhere.sparse_matrix_histo import Mandelbrot_disp
 
 def histogram(x=-.5, y=0, window=1.5):
     """Creates a histogram.
-    
+
     Histogram display for each color density.
 
     :param x: coordinate for the points of mandelbrot set

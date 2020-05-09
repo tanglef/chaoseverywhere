@@ -8,7 +8,7 @@
 #print(chaos.logistic(3.6, 0.001))
 
 #chaos.Mandelbrot_disp(-.5,0,1.5, 200,500).anim_pics_mandel(go_up=False)
-#print(chaos.logistic_draw(.01,3,50,200)) 
+#print(chaos.logistic_draw(.01,3,50,200))
 #chaos.animate_logistic(save=True)
 #chaos.connections()
 #.Mandelbrot_disp(0,0,2,t_max=150, precision=500).anim_puiss_mandel(remove=False)
@@ -49,7 +49,4 @@
 #ax2.plot(x, x, color='orange')
 #plt.show()
 #print(type(chaos.connections()))
-
-
-
 

@@ -72,7 +72,7 @@ def bifurcation(show=True):
         for _ in range(1000):
             x0 = logistic(i, x0)
         y.append(x0)
-    
+
     if show:
         plt.figure()
         plt.plot(x, y, ls='', marker=',', color='blue')

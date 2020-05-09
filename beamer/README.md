@@ -20,8 +20,8 @@ if not, please refer to the installation section in the documentation of chaosev
 
 In order to visualize this presentation, one can face multiple situations:
 
-1. if you're using Windows, then we advise you to download Acrobat Reader,
-2. if you're using Linux, please use a visualizer supported by the [animate package](http://ctan.unsw.edu.au/macros/latex/contrib/animate/animate.pdf).
+1.  if you're using Windows, then we advise you to download Acrobat Reader,
+2.  if you're using Linux, please use a visualizer supported by the [animate package](http://ctan.unsw.edu.au/macros/latex/contrib/animate/animate.pdf).
 
 ## Fail-safe
 
@@ -29,7 +29,7 @@ If, for any reason, you are not able to either generate or use a pdf reader that
 
 The only change you will notice, is that:
 
-- if you aren't able to produce the images (*ie* run the Python file), a message indicating to click on a button will appear,
-- if you aren't able to read the animation, you will still be able to click on the button by yourself.
+-   if you aren't able to produce the images (*ie* run the Python file), a message indicating to click on a button will appear,
+-   if you aren't able to read the animation, you will still be able to click on the button by yourself.
 
 This button is a fail-safe that leads to the Youtube video of the animation. You will be able to watch the animation, only not in the pdf.
