@@ -8,7 +8,7 @@ The Mandelbrot set :math:`\mathcal{M}` is defined as :
 
 .. math::
 
-   \mathcal{M}=\left\{ c\in\mathbb{C},\ \lim_{n\rightarrow +\infty} z_n <+\infty,\ \text{with } z_{n+1}=z_n^2+c,\ z_0=0\right\}.
+   \mathcal{M}=\left\{ c\in\mathbb{C},\ (z_n)_n \text{ is bounded},\ \text{with } z_{n+1}=z_n^2+c,\ z_0=0\right\}.
 
 
 Given the fact that it is a set of points, we can compute it using a ``class`` Python object. Thus, determine which arguments to pass
