@@ -30,7 +30,7 @@ Just like before, the main (and static) pieces of the animations take more time 
 
 The memory use flame graph can be visualized by running the `memory_graph.py` file.
 
-:warning: We removed the `bifurcation` function in the memory graph because it was very time consuming in order to get the visualization. The main reason for that is the mainy calls to the `logistic` function which are necessary. We also only kept two memory graphs for the animations and deleted (on the fly) the folder they created (also on the fly). Other animations aren't shown here, because either it was done using mayavi, either the animations were done using maplotlib, and we made one of each.
+:warning: We removed the `bifurcation` function in the memory graph because it was very time consuming in order to get the visualization. The main reason for that is the mainy calls to the `logistic` function which are necessary. We also only kept two memory graphs for the animations and deleted (on the fly) the folder they created (also on the fly). Other animations aren't shown here, because either it was done using mayavi, either the animations were done using matplotlib, and we made one of each.
 
 On the flame-graph, we can see that the `mandel_loop` and the `mandelbrot` function are almost the same in a memory point of view with both just a little over `200` MiB. 
 
