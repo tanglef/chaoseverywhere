@@ -24,7 +24,7 @@ For those who whish to run the report, additional packages are need, they are li
 
 ## Documentation
 
-The documentation of this package is available [here](https://chaoseverywhere.readthedocs.io/en/latest/). You can find a gallery to learn using this package with examples. The code of these examples is located in the `./examples` directory. One may run the `plot_mandelbrot_bw.py` file to verify the installation.
+The documentation of this package is available [here](https://chaoseverywhere.readthedocs.io/en/latest/). You can find a [gallery to learn using this package with examples](https://chaoseverywhere.readthedocs.io/en/latest/_auto_scripts/index.html). The code of these examples is located in the `./examples` directory. One may run the `plot_mandelbrot_bw.py` file to verify the installation.
 
 ## Structure
 
