@@ -20,19 +20,19 @@ Aside from python packages in the requirements.txt file in the source directory,
 $ pip install git+https://github.com/tanglef/chaoseverywhere
 ```
 
-For those who whish to run the report, additional packages are need, they are listed in the `requirements_report.txt` file in the `.\report` directory and are only an additional layer, the main `requirements.txt` file is mandatory.
+For those who whish to run the report, additional packages are need, they are listed in the `requirements_report.txt` file in the `./report` directory and are only an additional layer, the main `requirements.txt` file is mandatory.
 
 ## Documentation
 
-The documentation of this package is available [here](https://chaoseverywhere.readthedocs.io/en/latest/). You can find a gallery to learn using this package with examples. The code of these examples is located in the `.\examples` directory. One may run the `plot_mandelbrot_bw.py` file to verify the installation.
+The documentation of this package is available [here](https://chaoseverywhere.readthedocs.io/en/latest/). You can find a gallery to learn using this package with examples. The code of these examples is located in the `./examples` directory. One may run the `plot_mandelbrot_bw.py` file to verify the installation.
 
 ## Structure
 
-The `.\report` folder contains a jupyter notebook to display different elements like images of the fractals
+The `./report` folder contains a jupyter notebook to display different elements like images of the fractals
 and the bifurcation diagram and lets you manipulate the objects with some interactions.
 
-A beamer presentation will be stored in the `.\beamer` folder alongside the necessay style file to run the file and a documentation will be made using the sphinx package in the `.\doc` directory.
+A beamer presentation will be stored in the `./beamer` folder alongside the necessay style file to run the file and a documentation will be made using the sphinx package in the `./doc` directory.
 
-*Tests functions* are implemented in the `.\chaoseverywhere\tests` folder in order to assure the good development of this package. We also used a continuous integration hook action disposed in the `./github/workflows` folder which triggers an action everyday at `5`a.m and at each push.
+*Tests functions* are implemented in the `./chaoseverywhere\tests` folder in order to assure the good development of this package. We also used a continuous integration hook action disposed in the `./github/workflows` folder which triggers an action everyday at `5`a.m and at each push.
 
-Every bit of the main code is in the `.\chaoseverywhere` folder.
+Every bit of the main code is in the `./chaoseverywhere` folder.
