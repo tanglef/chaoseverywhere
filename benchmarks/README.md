@@ -2,7 +2,9 @@
 
 :warning: :information_source: To have a better visualization of the time managment, you can run the file `run_to_visualize.py` and wait a few seconds. We recommend setting the *depth* to `5` and the *Cutoff* to `1/100`.
 
-Before using the `memory_graph.py` file, one must replace at lines 19, 41, 58, 65, 86, 116 and 136 the `#` with a `@` so that the `memory_profiler` and github can both be used.
+In order to see the memory impact, please run the `memory_graph.py` file. Before using the `memory_graph.py` file, one must replace at lines 19, 41, 58, 65, 86, 116 and 136 the `#` with a `@` so that the `memory_profiler` and github can both be fully used.
+
+A summary of the results is presented below in order to have an idea of the time-memory consumption before (maybe) downloading the package. Please note that a modelisation of the time consumption for the two functions created to build the 2D-mandelbrot set is present in the `report` folder at the root.
 :information_source: :warning:
 
 **Chosen functions** : We chose to only run functions that are the root of this module. Indeed, in most of the animations, we create the background once and then only add points or move around the structure. So the main question is not *How long does it take to render the movie?* but rather *How long does it take to produce each part of the movie?* We only applied the saying: *a chain is only as strong as its weakest link*.
