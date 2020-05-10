@@ -15,17 +15,17 @@ As for the benchmarking, it will be done once everything is completed.
 
 The schedule that we've predicted is :
 
-- Mandlebrot 2D init is completed since at least April 25,
-- Mandlebrot 3D init is completed since at least April 25,
+- Mandlebrot 2D is completed since at least April 25,
+- Mandlebrot 3D is completed since at least April 25,
 - Class of Mandlebrot 2D is completed since at least April 25,
 - Class of Mandlebrot 3D (included in Class of Mandlebrot 2D) is completed since at least April 25,
-- Logisitc init is completed since at least April 25,
+- Logisitc is completed since at least April 25,
 - Logistic push further : April 26 finished,
-- Report init will be finished May 2,
-- Beamer will be finished one week before due date !!
+- Report was finished beginning of May,
+- Beamer will be finished for May 17,
 - Test functions are done since May 5,
-- Sphinx is completed since at least April 25,
-- Report widgets : April 28 finished,
+- Sphinx is completed since at least April 25, only small fixes were made after that date,
+- Report widgets: April 28 finished,
 - Sparse matrix : April 12 finished,
-- Histogram : April 26 finished,
-- Animations : April 26 finished.
+- Histogram: April 26 finished,
+- Animations: April 26 finished, small fixes made after for portability.
