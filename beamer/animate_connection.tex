@@ -114,8 +114,34 @@
 
 
 \section{Chaoseverywhere}
+\subsection{Introduction}
 \begin{frame}{Chaoseverywhere}
-Intro
+Intro\\
+Python3 package : \textit{\textbf{Chaoseverywhere}}\\
+\begin{minted}{python}
+	>>> sys.path.append(os.path.dirname(
+    os.path.abspath('chaoseverywhere')) + (os.path.sep + '..'))
+  >>> import chaoseverywhere as chaos
+\end{minted}
+It includes $2$ main themes :
+\begin{enumerate}
+    \item the Manldebrot set
+    \item the logistic map
+\end{enumerate}
+\end{frame}
+
+\subsection{Generalities}
+\begin{frame}[fragile]{Generalities}
+Our subject deals with fractals and the chaos theory.
+\begin{description}
+    \item [Fractal :] has an object that has at least one of the following characteristics:
+    \begin{enumerate}
+        \item a self-similarity at different scale,
+        \item self-similar structures can be observed within the figure,
+        \item the Haussdorff dimension isn't an integer.
+    \end{enumerate}
+    \item [Chaos :] is study of the patterns one can find in a system that seems totally random.
+\end{description}
 \end{frame}
 
 \section[Logistic map]{The logistic map}
