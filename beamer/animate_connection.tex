@@ -1,4 +1,4 @@
-\documentclass[11pt, compress]{beamer}
+\documentclass[11pt, compress,tikz]{beamer}
 
 \usepackage{preamb}
 \graphicspath{{./../doc/_images/}}
@@ -74,6 +74,7 @@
     \includegraphics[scale=.2]{logo1_f.pdf}%
     \hfill%
     \includegraphics[scale=.1]{logo_univ.pdf}%
+    \hspace{.25cm}
   }%
 }
 
@@ -114,38 +115,80 @@
 
 
 \section{Chaoseverywhere}
-\begin{frame}{Chaoseverywhere}
-Intro
+\subsection{Introduction}
+\begin{frame}[fragile]{Chaoseverywhere}
+Python3 package : \textit{\textbf{Chaoseverywhere}}%
+\begin{minted}{python}
+>>> import chaoseverywhere as chaos
+\end{minted}
+Includes $2$ main themes:
+\begin{enumerate}[label=$\bullet$]
+    \item the Manldebrot set,  %
+    \item the logistic map. %
+\end{enumerate}
+\begin{block}<2>{Specific dependencies}
+\begin{enumerate}[label=\ding{51}]
+\item FFMPEG
+\item Mayavi
+\end{enumerate}
+\end{block}
+\end{frame}
+
+\subsection{Generalities}
+\begin{frame}[fragile]{Generalities}
+Our subject deals with fractals and the chaos theory.
+\begin{description}
+   \item [Fractal :] has an object that has at least one of the following characteristics:
+    \begin{enumerate}[label=$\bullet$]
+        \item a self-similarity at different scale,
+        \item self-similar structures can be observed within the figure,
+        \item the Haussdorff dimension isn't an integer.
+    \end{enumerate}
+    \item [Chaos :] is study of the patterns one can find in a system that seems totally random.
+\end{description}
 \end{frame}
 
 \section[Logistic map]{The logistic map}
 \subsection{The map}
 
 \begin{frame}[fragile]{The logistic map: the cobweb diagram}
+\vspace{-.25cm}
+\begin{block}{Map formula}
+\[x_{n+1} = rx_{n}(1-x_{n})\]
+\end{block}
+\vspace{-.3cm}
+\begin{onlyenv}<3>
 \begin{minted}{python}
-	>>> chaos.logistic_draw(0.01, 3.6, 50, 100)
+>>> chaos.logistic_draw(x0=0.01, r=3.6, 50, 100)
 \end{minted}
-\vspace{-.75cm}
-\begin{figure}[H]
-\begin{center}
-    \includegraphics<2>[scale=0.55]{logistic_cobweb.pdf}
-\end{center}
-\end{figure}
-\end{frame}
-
-\begin{frame}{Another frame on the logistic map}
-Speak about it (before or after the first one ?????) + behavior
+\end{onlyenv}
+\begin{columns}
+          \column{0.60\linewidth}
+             \begin{onlyenv}<1-3>
+             \vspace{-1.2cm}
+  \begin{center}
+    \includegraphics<3>[clip,scale=0.5, trim={.5cm 0 1.5cm 1.5cm}]{logistic_cobweb.pdf}
+  \end{center}
+\end{onlyenv}
+             
+           \column{0.40\linewidth}
+           \vspace{-1.2cm}
+           \begin{enumerate}[label=$\bullet$]
+               \item<1-> $1 < r \leq 3 $: one point of convergence
+               \item<2-> $3 < r \leq 3.57$ : oscillations between several values
+               \item<3-> $r > 3.57$ : chaotic behavior
+           \end{enumerate}
+         \end{columns} 
 \end{frame}
 
 \subsection{Bifurcation diagram}
 \begin{frame}{Bifurcation diagram}
+A summary of the logistic map : the bifurcation diagram
 \begin{center}
     \includegraphics[scale=0.6]{bifurcation.pdf}
 \end{center}
-%\begin{lstlisting}
-%chaos.bifurcation(show=True)
-%\end{lstlisting}
 \end{frame}
+
 
 
 \section[Mandelbrot]{The Mandelbrot set}
