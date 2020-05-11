@@ -122,6 +122,35 @@ Intro
 \subsection{The map}
 
 \begin{frame}[fragile]{The logistic map: the cobweb diagram}
+The equation of the logistic map is : $x_{n+1} = rx_{n}(1-x_{n})$. \\
+There are $3$ main behaviors in this map.
+\begin{itemize}
+  \item When $1 < r \leq 3 $: one point of convergence
+\end{itemize}
+\begin{minted}{python}
+	>>> chaos.logistic_draw(0.01, 1.9, 50, 100)
+\end{minted}
+\vspace{-.75cm}
+\begin{figure}[H]
+\begin{center}
+    \includegraphics<2>[scale=0.55]{logistic_cobweb.pdf}
+\end{center}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Another frame on the logistic map}
+\begin{itemize}
+  \item When $3 < r \leq 3.57$ : oscillations between several values
+\end{itemize}
+\begin{minted}{python}
+	>>> chaos.logistic_draw(0.01, 3.4, 50, 100)
+\end{minted}
+\end{frame}
+
+\begin{frame}{Another frame on the logistic map}
+\begin{itemize}
+  \item When $r > 3.57$ : chaotic behavior
+\end{itemize}
 \begin{minted}{python}
 	>>> chaos.logistic_draw(0.01, 3.6, 50, 100)
 \end{minted}
@@ -133,12 +162,9 @@ Intro
 \end{figure}
 \end{frame}
 
-\begin{frame}{Another frame on the logistic map}
-Speak about it (before or after the first one ?????) + behavior
-\end{frame}
-
 \subsection{Bifurcation diagram}
 \begin{frame}{Bifurcation diagram}
+A summary of the logistic map : the bifurcation diagram
 \begin{center}
     \includegraphics[scale=0.6]{bifurcation.pdf}
 \end{center}
