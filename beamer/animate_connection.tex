@@ -157,16 +157,32 @@ Our subject deals with fractals and the chaos theory.
 \[x_{n+1} = rx_{n}(1-x_{n})\]
 \end{block}
 \vspace{-.3cm}
+
+\begin{onlyenv}<1>
+\begin{minted}{python}
+>>> chaos.logistic_draw(x0=0.01, r=1.6, 50, 100)
+\end{minted}
+\end{onlyenv}
+
+\begin{onlyenv}<2>
+\begin{minted}{python}
+>>> chaos.logistic_draw(x0=0.01, r=3.45, 50, 100)
+\end{minted}
+\end{onlyenv}
+
 \begin{onlyenv}<3>
 \begin{minted}{python}
 >>> chaos.logistic_draw(x0=0.01, r=3.6, 50, 100)
 \end{minted}
 \end{onlyenv}
+
 \begin{columns}
           \column{0.60\linewidth}
              \begin{onlyenv}<1-3>
              \vspace{-1.2cm}
   \begin{center}
+    \includegraphics<1>[clip,scale=0.5, trim={.5cm 0 1.5cm 1.2cm}]{logistic_map1.pdf}
+    \includegraphics<2>[clip,scale=0.5, trim={.5cm 0 1.5cm 1.2cm}]{logistic_map2.pdf}
     \includegraphics<3>[clip,scale=0.5, trim={.5cm 0 1.5cm 1.5cm}]{logistic_cobweb.pdf}
   \end{center}
 \end{onlyenv}
