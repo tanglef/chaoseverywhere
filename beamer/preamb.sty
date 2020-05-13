@@ -26,8 +26,12 @@
 \RequirePackage{enumitem}
 \RequirePackage{pifont}
 \RequirePackage{caption}
-
-
+\RequirePackage{minted}
+\usemintedstyle{monokai}
+\definecolor{backmonokai}{HTML}{282828}
+\setminted{bgcolor=backmonokai} 
+\RequirePackage{tcolorbox}
+\newtcolorbox{mybox}{colback=red!5!white,colframe=red!75!black}
 %\def\tkz@Projection(#1,#2)(#3)#4{%
 %\begingroup 
 %  \pgfpointdiff{\pgfpointanchor{#1}{center}}%
