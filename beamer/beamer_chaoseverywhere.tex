@@ -121,7 +121,7 @@ Python3 package : \href{https://github.com/tanglef/chaoseverywhere}{\beamergotob
 \end{minted}
 Includes $2$ main themes:
 \begin{enumerate}[label=$\bullet$]
-    \item the Manldebrot set,  %
+    \item the Mandelbrot set,  %
     \item the logistic map. %
 \end{enumerate}
 \begin{block}<2>{Specific dependencies}
@@ -194,10 +194,13 @@ It is the behavior of the dynamic systems which are very sensitives at the initi
 \end{frame}
 
 \subsection{Bifurcation diagram}
-\begin{frame}{Bifurcation diagram}
+\begin{frame}[fragile]{Bifurcation diagram}
 A summary of the logistic map: the bifurcation diagram
+\begin{minted}{python}
+>>> chaos.bifurcation(show=True)
+\end{minted}
 \begin{center}
-    \includegraphics[scale=0.6]{bifurcation.pdf}
+    \includegraphics[scale=0.6, clip, trim={0 0 0 2cm}]{bifurcation.pdf}
 \end{center}
 \end{frame}
 
@@ -299,7 +302,7 @@ Some possible upgrades are:
 \begin{box2}{
 \begin{enumerate}[label=\ding{42}]
 \item other chaotic objects: Lorentz attractors (differential equations point of view)
-\item mutli-threading for each quadrants of $\mathcal{M}$ for efficiency.
+\item multi-threading for each quadrants of $\mathcal{M}$ for efficiency.
 \end{enumerate}}
 \end{box2}
 \end{frame}  

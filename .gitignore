@@ -24,6 +24,7 @@ sparse_matrix__histo
 *.vrb
 *.nav
 *.out
+*chaoseverywhere.pdf
 animate_connection.pdf
 *.xml
 *.snm
