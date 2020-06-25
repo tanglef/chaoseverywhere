@@ -10,8 +10,8 @@ on:
       - devlopment
   pull_request:
     branches: [ '*' ]
-  schedule:
-    - cron: '0 4 * * *' #every day at 5am France
+  #schedule:
+ #    - cron: '0 4 * * *' #every day at 5am France
 
 jobs:
   build:
