@@ -70,7 +70,7 @@ plt.show()
 #
 # .. raw:: html
 #
-#     <iframe width="356" height="200" src="https://www.youtube.com/embed/v=1QskVC57vc8?rel=0&loop=1&playlist=1QskVC57vc8" frameborder="0" allowfullscreen></iframe>
+#     <iframe width="356" height="200" src="https://www.youtube.com/embed/1QskVC57vc8" frameborder="0" allowfullscreen></iframe>
 #
 
 
